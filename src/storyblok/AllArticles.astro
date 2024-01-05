@@ -10,7 +10,7 @@ const { data } = await storyblokApi.get(`cdn/stories`, {
   version: isPreview() ? "draft" : "published",
   starts_with: "articles/",
   language,
-  is_startpage: 0,
+  is_startpage: false,
 });
 
 const articles = data.stories;
@@ -23,7 +23,7 @@ const articles = data.stories;
   <ul class="grid grid-cols-1 gap-6 md:grid-cols-3">
     {
       articles?.length &&
-        articles.map((article) => {
+        articles.map((article: any) => {
           article.content.slug = article.slug;
           return (
             <li>

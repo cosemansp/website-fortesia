@@ -2,7 +2,7 @@
 
 let languages = ["en", "es"];
 
-export default function parseUrl(url) {
+export default function parseUrl(url: string) {
   //converting the current url to an array based on '/'
   let urlToArray = url?.split("/");
   //Setting the fallback language to be english

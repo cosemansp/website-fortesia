@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/check": "^0.3.4",
     "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vercel": "^6.1.2",
     "@storyblok/astro": "^4.0.0",
     "@storyblok/js": "^3.0.0",
     "@tailwindcss/typography": "^0.5.10",
