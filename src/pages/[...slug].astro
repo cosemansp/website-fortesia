@@ -24,7 +24,9 @@ export async function getStaticPaths() {
   return generateStaticPaths();
 }
 
-const { slug, language } = Astro.params;
+const { slug, language } = Astro.params as any;
+
+console.log(">>> slug", { slug, language });
 
 const storyblokApi = useStoryblokApi();
 

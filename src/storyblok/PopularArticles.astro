@@ -4,7 +4,6 @@ import { storyblokEditable } from "@storyblok/astro";
 
 const { blok } = Astro.props;
 let articles = blok.articles;
-console.log(">>>", Astro.props);
 ---
 
 <section class="mx-6 my-12" {...storyblokEditable(blok)}>
@@ -15,7 +14,6 @@ console.log(">>>", Astro.props);
     {
       articles?.length &&
         articles.map((article: any) => {
-          console.log(">>>", article);
           article.content.slug = article.slug;
           return (
             <li>
