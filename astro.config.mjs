@@ -1,23 +1,15 @@
 import { defineConfig } from "astro/config";
-import { loadEnv } from "vite";
 import storyblok from "@storyblok/astro";
-import basicSsl from "@vitejs/plugin-basic-ssl";
+import { loadEnv } from "vite";
 import tailwind from "@astrojs/tailwind";
-import vercelServerless from "@astrojs/vercel/serverless";
-import vercelStatic from "@astrojs/vercel/static";
-
-// https://astro.build/config
+import basicSsl from "@vitejs/plugin-basic-ssl";
+import vercel from "@astrojs/vercel/serverless";
 const env = loadEnv("", process.cwd(), "STORYBLOK");
 
-const vercel = env.STORYBLOK_IS_PREVIEW === "yes" ? vercelServerless : vercelStatic;
-
+// https://astro.build/config
 export default defineConfig({
   integrations: [
-    tailwind(),
     storyblok({
-      apiOptions: {
-        region: "eu",
-      },
       accessToken: env.STORYBLOK_TOKEN,
       bridge: env.STORYBLOK_IS_PREVIEW === "yes",
       components: {
@@ -27,18 +19,14 @@ export default defineConfig({
         teaser: "storyblok/Teaser",
         hero: "storyblok/Hero",
         config: "storyblok/Config",
-        article: "storyblok/Article",
         "popular-articles": "storyblok/PopularArticles",
         "all-articles": "storyblok/AllArticles",
+        article: "storyblok/Article",
       },
     }),
+    tailwind(),
   ],
-  output: env.STORYBLOK_IS_PREVIEW === "yes" ? "server" : "static",
-  adapter: vercel({
-    webAnalytics: {
-      enabled: true,
-    },
-  }),
+  output: env.STORYBLOK_IS_PREVIEW === "yes" ? "server" : "hybrid",
   ...(env.STORYBLOK_ENV === "development" && {
     vite: {
       plugins: [basicSsl()],
@@ -47,4 +35,5 @@ export default defineConfig({
       },
     },
   }),
+  adapter: vercel(),
 });

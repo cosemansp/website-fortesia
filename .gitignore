@@ -1,6 +1,5 @@
 # build output
 dist/
-
 # generated types
 .astro/
 .vercel/
@@ -14,9 +13,13 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+
 # environment variables
 .env
 .env.production
 
 # macOS-specific files
 .DS_Store
+
+# Visual Studio Code
+.vscode

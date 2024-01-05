@@ -1,27 +1,50 @@
 ---
-import { useStoryblokApi } from "@storyblok/astro";
+import { useStoryblokApi, type ISbStoriesParams } from "@storyblok/astro";
 // @ts-ignore
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-// @ts-ignore
-import parseUrl from "../utils/parseUrl";
 import isPreview from "../utils/isPreview";
-import generateStaticPaths from "../utils/generateStaticPaths";
 export async function getStaticPaths() {
-  return await generateStaticPaths();
+  const storyblokApi = useStoryblokApi();
+  const { data } = await storyblokApi.get("cdn/links", {
+    version: isPreview() ? "draft" : "published",
+  });
+  let links = data.links;
+  links = Object.values(links);
+  const paths = links
+    .filter((link) => !link.is_folder)
+    .map((link: any) => {
+      return {
+        params: {
+          slug: link.slug === "home" || link.slug === "config" ? undefined : link.slug,
+        },
+      };
+    });
+  return paths;
 }
-const params = Astro.params as any;
-let props = isPreview() ? parseUrl(params?.slug) : Astro.props;
-const { slug, language, langSwitch } = props;
+
+const { slug } = Astro.params;
+// console.log("slug", Astro.params, isPreview());
+let props = Astro.props;
 const storyblokApi = useStoryblokApi();
-const { data } = await storyblokApi.get(`cdn/stories/${slug === undefined ? "home" : slug}`, {
+let story: any = null;
+const url = `cdn/stories/${slug === undefined ? "home" : slug}`;
+const options = {
   version: isPreview() ? "draft" : "published",
   resolve_relations: ["popular-articles.articles"],
-  language,
-});
-const story = data.story;
+} as ISbStoriesParams;
+// console.log("slug options", url, options);
+try {
+  const { data } = await storyblokApi.get(url, options);
+  story = data.story;
+  // console.log("slug result", data);
+} catch (e) {
+  console.log("error !!!!!", e);
+  throw new Error(e);
+}
+// const story = data.story;
 ---
 
-<BaseLayout langSwitch={langSwitch} language={language}>
-  <StoryblokComponent language={language} blok={story.content} />
+<BaseLayout>
+  <StoryblokComponent blok={story.content} />
 </BaseLayout>
