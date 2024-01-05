@@ -1,8 +1,6 @@
 import { useStoryblokApi } from "@storyblok/astro";
 import isPreview from "./isPreview";
-// import { languages } from "./langs";
-
-let languages = ["en", "es"];
+import { languages } from "./langs";
 
 type Path = {
   props: {
@@ -22,14 +20,14 @@ export default async function generateStaticPaths() {
   });
   let links = data.links;
   links = Object.values(links);
-  const paths: Path[] = [];
+  let paths: Path[] = [];
   links.forEach((link: { slug: string }) => {
     languages.forEach((language) => {
       //This slug will be used for fetching data from storyblok
       let slug = link.slug === "home" ? undefined : link.slug;
       //This will be used for generating all the urls for astro
       let full_url = language === "en" ? slug : `${language}/${slug ?? ""}`;
-      //This will let us change the url for different versions
+      //This will let us change the url for diffrent versions
       let langSwitch = {};
       languages.forEach((lang) => {
         langSwitch = {

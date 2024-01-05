@@ -3,10 +3,13 @@ import { loadEnv } from "vite";
 import storyblok from "@storyblok/astro";
 import basicSsl from "@vitejs/plugin-basic-ssl";
 import tailwind from "@astrojs/tailwind";
-import vercel from "@astrojs/vercel/serverless";
+import vercelServerless from "@astrojs/vercel/serverless";
+import vercelStatic from "@astrojs/vercel/static";
 
 // https://astro.build/config
 const env = loadEnv("", process.cwd(), "STORYBLOK");
+
+const vercel = env.STORYBLOK_IS_PREVIEW === "yes" ? vercelServerless : vercelStatic;
 
 export default defineConfig({
   integrations: [
@@ -31,7 +34,11 @@ export default defineConfig({
     }),
   ],
   output: env.STORYBLOK_IS_PREVIEW === "yes" ? "server" : "static",
-  adapter: vercel(),
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
   ...(env.STORYBLOK_ENV === "development" && {
     vite: {
       plugins: [basicSsl()],

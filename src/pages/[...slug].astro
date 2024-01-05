@@ -1,44 +1,27 @@
 ---
 import { useStoryblokApi } from "@storyblok/astro";
+// @ts-ignore
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import generateStaticPaths from "../utils/generateStaticPaths";
+// @ts-ignore
+import parseUrl from "../utils/parseUrl";
 import isPreview from "../utils/isPreview";
-
+import generateStaticPaths from "../utils/generateStaticPaths";
 export async function getStaticPaths() {
-  // const storyblokApi = useStoryblokApi();
-
-  // const { data } = await storyblokApi.get("cdn/links", {
-  //   version: "draft",
-  // });
-  // let links = data.links;
-  // links = Object.values(links);
-
-  // return links.map((link: any) => {
-  //   return {
-  //     params: {
-  //       slug: link.slug === "home" || link.slug === "config" ? undefined : link.slug,
-  //     },
-  //   };
-  // });
-  return generateStaticPaths();
+  return await generateStaticPaths();
 }
-
-const { slug, language } = Astro.params as any;
-
-console.log(">>> slug", { slug, language });
-
+const params = Astro.params as any;
+let props = isPreview() ? parseUrl(params?.slug) : Astro.props;
+const { slug, language, langSwitch } = props;
 const storyblokApi = useStoryblokApi();
-
 const { data } = await storyblokApi.get(`cdn/stories/${slug === undefined ? "home" : slug}`, {
   version: isPreview() ? "draft" : "published",
-  language,
   resolve_relations: ["popular-articles.articles"],
+  language,
 });
-
 const story = data.story;
 ---
 
-<BaseLayout>
-  <StoryblokComponent blok={story.content} />
+<BaseLayout langSwitch={langSwitch} language={language}>
+  <StoryblokComponent language={language} blok={story.content} />
 </BaseLayout>

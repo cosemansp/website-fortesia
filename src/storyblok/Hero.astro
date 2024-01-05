@@ -18,8 +18,8 @@ let dynamicHeroClass = blok.layout === "constrained" ? "container mx-auto" : "";
     </h2>
   </div>
   <img
-    src={blok.background_image.filename}
-    alt={blok.background_image.alt}
+    src={blok.background_image?.filename}
+    alt={blok.background_image?.alt}
     class="absolute top-0 left-0 z-0 w-full h-full object-cover"
   />
 </div>
