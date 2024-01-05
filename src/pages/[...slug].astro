@@ -1,0 +1,42 @@
+---
+import { useStoryblokApi } from "@storyblok/astro";
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import generateStaticPaths from "../utils/generateStaticPaths";
+import isPreview from "../utils/isPreview";
+
+export async function getStaticPaths() {
+  // const storyblokApi = useStoryblokApi();
+
+  // const { data } = await storyblokApi.get("cdn/links", {
+  //   version: "draft",
+  // });
+  // let links = data.links;
+  // links = Object.values(links);
+
+  // return links.map((link: any) => {
+  //   return {
+  //     params: {
+  //       slug: link.slug === "home" || link.slug === "config" ? undefined : link.slug,
+  //     },
+  //   };
+  // });
+  return generateStaticPaths();
+}
+
+const { slug, language } = Astro.params;
+
+const storyblokApi = useStoryblokApi();
+
+const { data } = await storyblokApi.get(`cdn/stories/${slug === undefined ? "home" : slug}`, {
+  version: isPreview() ? "draft" : "published",
+  language,
+  resolve_relations: ["popular-articles.articles"],
+});
+
+const story = data.story;
+---
+
+<BaseLayout>
+  <StoryblokComponent blok={story.content} />
+</BaseLayout>
