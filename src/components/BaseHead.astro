@@ -1,0 +1,22 @@
+---
+import Karla from "@fontsource-variable/karla/files/karla-latin-wght-normal.woff2";
+import "@fontsource-variable/karla";
+import "@fontsource/crimson-text";
+import smartypants from "smartypants";
+
+export type Props = {
+  title?: string;
+  description?: string;
+};
+
+const { description = "The wonderfull art of painting" } = Astro.props;
+const title = [Astro.props.title, "Fortesia"].filter(Boolean).join(" | ");
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<title set:html={smartypants(title, 1)} />
+
+<!-- Font preloads -->
+<link rel="preload" href={Karla} as="font" type="font/woff2" crossorigin />

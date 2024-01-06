@@ -2,7 +2,7 @@
 import { useStoryblokApi, type ISbStoriesParams } from "@storyblok/astro";
 // @ts-ignore
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 import isPreview from "../utils/isPreview";
 export async function getStaticPaths() {
   const storyblokApi = useStoryblokApi();
@@ -45,6 +45,6 @@ try {
 // const story = data.story;
 ---
 
-<BaseLayout>
+<MainLayout>
   <StoryblokComponent blok={story.content} />
-</BaseLayout>
+</MainLayout>

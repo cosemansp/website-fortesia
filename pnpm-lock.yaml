@@ -8,12 +8,21 @@ dependencies:
   '@astrojs/vercel':
     specifier: ^5.0.2
     version: 5.2.0(astro@3.6.4)
+  '@fontsource-variable/karla':
+    specifier: ^5.0.19
+    version: 5.0.19
+  '@fontsource/crimson-text':
+    specifier: ^5.0.8
+    version: 5.0.8
   '@storyblok/js':
     specifier: ^3.0.0
     version: 3.0.0
   '@tailwindcss/typography':
     specifier: ^0.5.10
     version: 0.5.10(tailwindcss@3.4.0)
+  smartypants:
+    specifier: ^0.2.2
+    version: 0.2.2
 
 devDependencies:
   '@astrojs/tailwind':
@@ -691,6 +700,14 @@ packages:
     os: [win32]
     requiresBuild: true
     optional: true
+
+  /@fontsource-variable/karla@5.0.19:
+    resolution: {integrity: sha512-55UQMubhCCbj3A7IeYOaD/VJbKZLlnza7eR8knDpg+cZYBxM7yESuQo9U/kga0KHIuEdjEpBTmHKyGEsM1k2pA==}
+    dev: false
+
+  /@fontsource/crimson-text@5.0.8:
+    resolution: {integrity: sha512-6hEd36n0Xey0NJxGy0g1D2QbrquBkrbgLC6AtcbzmPRuL6wsyLPK3AQOkPp6YKJH1x5C/EglL45RFJJDSm88sw==}
+    dev: false
 
   /@isaacs/cliui@8.0.2:
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -3327,6 +3344,11 @@ packages:
 
   /sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
+
+  /smartypants@0.2.2:
+    resolution: {integrity: sha512-TzobUYoEft/xBtb2voRPryAUIvYguG0V7Tt3de79I1WfXgCwelqVsGuZSnu3GFGRZhXR90AeEYIM+icuB/S06Q==}
+    hasBin: true
+    dev: false
 
   /source-map-js@1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}

@@ -24,7 +24,10 @@ export default defineConfig({
         article: "storyblok/Article",
       },
     }),
-    tailwind(),
+    tailwind({
+      applyBaseStyles: false,
+      nesting: true,
+    }),
   ],
   output: env.STORYBLOK_IS_PREVIEW === "yes" ? "server" : "hybrid",
   ...(env.STORYBLOK_ENV === "development" && {

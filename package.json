@@ -19,7 +19,10 @@
   },
   "dependencies": {
     "@astrojs/vercel": "^5.0.2",
+    "@fontsource-variable/karla": "^5.0.19",
+    "@fontsource/crimson-text": "^5.0.8",
     "@storyblok/js": "^3.0.0",
-    "@tailwindcss/typography": "^0.5.10"
+    "@tailwindcss/typography": "^0.5.10",
+    "smartypants": "^0.2.2"
   }
 }
