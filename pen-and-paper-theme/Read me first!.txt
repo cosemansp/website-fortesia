@@ -1,0 +1,11 @@
+Hi and thank you for purchasing my theme!
+
+- Your theme is located inside 'penandpaper_WP_x.x.zip' file (x.x is the version number), so thats the archive that you want to upload when you're installing the theme inside your WordPress dashboard.
+
+- 'Documentation' - inside this folder is the documentation (help) for your WordPress theme. Please read this to understand how to use properly this theme.
+
+- 'PSD' - this folder contains Photoshop PSD files.
+
+- 'demo_content.xml' - this xml file contains demo content (pages, posts and the menu) that you can load once you install the theme.
+
+- 'changelog.txt' - inside this file you can track what's new in all versions.
