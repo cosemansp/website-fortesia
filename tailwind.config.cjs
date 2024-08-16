@@ -16,6 +16,9 @@ module.exports = {
       letterSpacing: {
         extraWide: "0.2em",
       },
+      backgroundImage: {
+        hero: "url('art-of-nature-1.jpg')",
+      },
     },
   },
   plugins: [
