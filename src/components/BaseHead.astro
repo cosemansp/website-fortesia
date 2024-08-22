@@ -1,7 +1,7 @@
 ---
-import Karla from "@fontsource-variable/karla/files/karla-latin-wght-normal.woff2";
-import "@fontsource-variable/karla";
-import "@fontsource/crimson-text";
+// import Karla from "@fontsource-variable/karla/files/karla-latin-wght-normal.woff2";
+// import "@fontsource-variable/karla";
+// import "@fontsource/crimson-text";
 import smartypants from "smartypants";
 
 export type Props = {
@@ -17,6 +17,73 @@ const title = [Astro.props.title, "Fortesia"].filter(Boolean).join(" | ");
 <meta name="viewport" content="width=device-width" />
 <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 <title set:html={smartypants(title, 1)} />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/skeleton.css" />
+<!-- <link rel="stylesheet" href="/css/galleriffic-1.css" type="text/css" /> -->
+<script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript" src="./js/custom.js"></script>
+<script type="text/javascript" src="./js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="./js/jquery.flexslider-min.js"></script>
+<script type="text/javascript">
+  /* <![CDATA[ */
+  var slider_vars = { controlNav: ["1"], directionNav: "", animation: "fade", direction: "horizontal" };
+  /* ]]> */
+</script>
 
-<!-- Font preloads -->
-<link rel="preload" href={Karla} as="font" type="font/woff2" crossorigin />
+<script type="text/javascript" src="./js/flexslider_script.js"></script>
+<script type="text/javascript" src="./js/jquery.galleriffic.js"></script>
+<script type="text/javascript" src="./js/portfolio_script.js"></script>
+
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Oranienbaum);
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  th,
+  table caption,
+  h1 > a,
+  h2 > a,
+  h3 > a,
+  h4 > a,
+  h5 > a,
+  h6 > a {
+    font-family: "Oranienbaum", serif;
+  }
+</style>
+
+<style>
+  a,
+  input[type="submit"],
+  input[type="button"],
+  button,
+  .button,
+  figcaption,
+  blockquote,
+  .flex-caption,
+  .caption p,
+  div.tooltip,
+  .wp-caption-text,
+  .logged-in-as,
+  hgroup > h2,
+  .wpcf7-not-valid-tip,
+  .wpcf7-response-output,
+  .curly_brackets span {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+  }
+</style>
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic);
+  body,
+  hgroup > h2,
+  #cancel-comment-reply-link,
+  .curly_brackets span:before,
+  .curly_brackets span:after,
+  .navigation li a {
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+  }
+</style>
