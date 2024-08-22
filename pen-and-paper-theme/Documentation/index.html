@@ -1,0 +1,407 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Template Documentation Template</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+		ol>li { margin-bottom:1em; }
+		ol.alpha>li { margin-bottom:.3em; }
+		img { margin:1em 0; }
+		hr { margin:60px 0; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;Pen &amp; Paper&rdquo; WordPress Theme Documentation by &ldquo;dabaman&rdquo;</h3>
+		
+		<hr style="margin:30px 0 20px 0">
+		
+		<h1 class="center">&ldquo;Pen &amp; Paper&rdquo; WordPress Theme</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Updated: September/02/2013<br>
+					By: dabaman</strong><br>
+              Site: <a href="http://themeforest.net/user/dabaman">Profile at ThemeForest</a></p>
+</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+			  <p class="prepend-top append-0">Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://themeforest.net/user/dabaman">here</a>. Thanks so much!</p>
+			</div>
+		</div>
+<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#install">Installing theme and importing the demo content</a></li>
+			<li><a href="#pages">Creating necessary pages</a></li>
+			<li><a href="#blog">Adding posts to blog</a></li>
+			<li><a href="#sections">Adding sections to your homepage</a></li>
+			<li><a href="#menu">Creating navigation menu</a></li>
+			<li><a href="#slider">Adding images to Flexslider</a></li>
+			<li><a href="#authors">Adding authors</a></li>
+			<li><a href="#portfolio">Adding items to Portfolio</a></li>
+			<li><a href="#form">Contact form</a></li>
+			<li><a href="#map">Google map</a></li>
+			<li><a href="#shortcodes">Shortcodes</a></li>
+			<li><a href="#plugins">Installing and configuring plugins</a></li>
+			<li><a href="#settings">Theme Settings</a></li>
+			<li><a href="#php">PHP files</a></li>
+			<li><a href="#css_files">CSS Files</a></li>
+			<li><a href="#js">JavaScript</a></li>
+			<li><a href="#psdFiles">PSD Files</a></li>
+			<li><a href="#fonts">Fonts</a></li>
+			<li><a href="#localizing">Localizing theme</a></li>
+			
+			<li><a href="#credits">Sources and Credits</a></li>
+		</ol>
+		
+<hr>
+		
+		<h3 id="htmlStructure"><strong id="install">A) Installing theme and importing the demo content</strong> - <a href="#toc">top</a></h3>
+		<p>There are two methods for installing this theme:</p>
+      <ul>
+          <li> Extract the theme zip file (<em>penandpaper_WP_x.x.zip</em>) into your WordPress theme directory (wp-content&gt;themes). After that, you should be able to see the Pen and Paper theme available inside the 'Appearance&gt;Themes' section of your dashboard. There you can activate the theme by clicking  the 'Activate' link.      </li>
+      </ul>
+      <ul>
+        <li> Inside the 'Appearance&gt;Themes' section of your dashboard, go to 'Install Themes' tab. Click on the 'Upload' link, and by using the upload file field, navigate to the Pen and Paper theme zip file (<em>penandpaper_WP_x.x.zip</em>). Once uploaded, click 'Install Now' button to install the theme.</li>
+      </ul>
+      <p>To import the demo content after installing the theme, go to 'Tools&gt;Import' and chose 'WordPress'. In needed, install the plugin, after which you can use the file upload field. Use the file upload field to choose the '<em>demo_content.xm</em>l' file. This will import all pages, custom posts  and the navigation menu used in the demo (please note that images used in demo will not be uploaded, you'll see only  placeholder images).</p>
+	<p>After importing, you'll just need to do few more steps:</p>
+      <ol>
+        <li>Go to 'Settings&gt;Reading' and set your homepage and blog page as shown on image in 'B) Creating necessary pages - 2'.</li>
+        <li>Go to 'Appearance&gt;Menus&gt;Manage Locations' and set 'Navigation' as 'Primary Navigation' (if this is not done already).</li>
+        <li>
+          Set your options inside  inside 'Appearance&gt;Theme Options'. Please take a minute to review this  - some options like parallax effect, Flexslider controls, and general background may be turned off by default.</li>
+        <li>Optional - 
+          install and configure plugins as shown in 'L) Installing and configuring plugins'</li>
+      </ol>
+      <p>After doing this, all that's left is to replace the demo content with your own and you're set.</p>
+<hr>
+      <h3 id="htmlStructure2"><strong id="pages">B) Creating necessary pages</strong> - <a href="#toc">top</a></h3>
+        <p>If you are creating your site from scratch (which means that you haven't imported the demo content as described previously), first you'll need to create the necessary pages. Basicaly, we need to two main pages here, both of which will be blank. One for our homepage (with sliding sections) and the other one for the blog posts.</p>
+      <ol>
+          <li>Your home page  needs to  to have 'Homepage' template set. If you are going to use blog, you will need one  page for that (template should be leaved as 'Default template').<img src="assets/images/homepage_template.png" width="744" height="480"></li>
+          <li>Homepage needs to be set as 'Front page' and Blog  page needsto be set as 'Posts page' inside 'Settings&gt;Reading' as shown on the image.<br><img src="assets/images/reading_settings.png" width="556" height="207"></li>
+      </ol>
+<hr>
+      <h3 id="htmlStructure4"><strong id="blog">C) Adding  posts to  Blog</strong> - <a href="#toc">top</a></h3>
+        <p>Adding new posts to your Blog is done inside the Posts section of your dashboard. Every new post added will appear inside your blog page.        </p>
+        <p>When adding a post, you have an option to use a featured image with it. To do so, inside 'Featured Image' panel click the 'Set featured image' link. Navigate to your desired image (by uploading it or choosing an image from Media Library).When done, click 'Set feautured image'.</p>
+      <hr>
+      <h3 ><span id="sections"><strong>D) Adding sections to your Homepage</strong> - <a href="#toc">top</a></h3>
+      <p>Basically, a homepage section is a scrolling part of your front page. It is added inside 'Homepage&gt;Add New Section' part of you dashboard, very similar as you would add a new post to your blog.</p>
+      <p><img src="assets/images/home_section.png" width="792" height="1713"></p>
+      <ol>
+        <li>In the top title field, add a title for your section. This will not be shown on your homepage, however, it will help you to distinguish a section in the 'Homepage' view where all sections are displayed.</li>
+        <li>In the textarea field, add the content for your section.  To style your content, refer to the 'layout shortcodes' part of this documentation.</li>
+        <li>In the bottom title field, add the title of your section that will be shown on the page.</li>
+        <li>In the subtitle field, add the subtitle that will be shown bellow the title, inside curly brackets. Please note that you can't use shortcodes inside this field. So, if you wan't to add icons, you will have to add them as html code (read 'K) Shortcodes - Icons' for more info)</li>
+        <li>You can select one on the available background presets, or upload your own image.</li>
+        <li>If you have a small tillebale image, chose Repead All, for background repeat, while in case of a big, fullscreen image, select 'No Repeat'.</li>
+        <li> The value of the 'Parallax Bacgkround Ratio' determents the speed at which the background scrolls. It is relative to the natural scroll speed, so a ratio of 0.5 would cause the background to scroll at half-speed, a ratio of 1 would have no effect, and the ratio of 0 will result in fixed background image. Please note that this will affect only if the parallax effect is enabled inside 'Appearance&gt;Theme Options&gt;Homepage Settings' page.</li>
+        <li>In the 'Slug' field (if this panel is not shown, you can turn it on by clicking the 'Screen Options' tab in the top right corner, and then checking a 'Slug' checkbox), enter a word that will serve as a direct link to your homepage section. If you leave it blank, WordPress will automatically generate a word from your section title. For example, if the title is 'About Me', than the slug will be 'about-me' (all small caps and no spaces). <br>
+          Link to your homepage section has a format of '#slug' . In our case, that means that link to 'About Me' section is going to be '#about-me'. You should copy this link inside the 'Custom URL' field when adding a link to your navigation menu (inside 'Appearance&gt;Menus').</li>
+      </ol>
+<hr>
+<h3><strong id="menu">E) Creating navigation menu</strong> - <a href="#toc">top</a></h3>
+      <p>In order to display our sections and pages in the menu, we need to create a new navigation menu (this is alrady done if you've imported the demo content). Go to 'Appearance&gt;Menus', and click a '+' tab to add a menu. Enter a name, and add it as a primary navigation. Basicaly, there are two types of links that you can add to your menu: custom links for homepage sections, and the regular pages.</p>
+      <p><img src="assets/images/menu_setup.png" width="792" height="475"></p>
+      <ul>
+        <li>When adding a homepage section to your menu, use a 'Custom Links' panel. In the URL field, paste or type the custom link address for desired section (you can copy it from 'Homepage' section, under the 'Custom link URL' column). In the label field, type the name that will be displayed in the menu. Then click the "Add to Menu' button to add your new new link.<br>
+          Keep in mind that your custom links inside the menu should be ordered in the same way as the sections on your page. <img src="assets/images/custom_link_add.png" alt="" width="298" height="172"><img src="assets/images/home_links.png" width="743" height="274"></li>
+      </ul>
+      <ul>
+        <li>When adding a page to your menu, use the 'Pages' panel. Simply select the pages you want to add, and click 'Add to Menu'. All pages should be groped together, as well as all custom links for homepage sections.</li>
+      </ul>
+<hr>
+        <h3 id="htmlStructure3"><strong id="slider">E) Adding images to Flexslider</strong> - <a href="#toc">top</a></h3>
+      <p>This theme uses Flexslider, and you can add images inside Flexslider&gt;Add New Slide' sections of your dashboard. Every slide is added as a post, and every image is a featured image of that post.</p>
+      <ol>
+        <li>Title will be shown only inside your dashboard, and not on published page.  Image is added as a featured image. Also, you have an option to add a  caption for your image.<br> <img src="assets/images/slider_new_slide.png" width="748" height="435"><br>
+        </li>
+        <li>The Flexslider will be displayed where [flexslider] shortcode is placed (if you have imported the demo content, that will be inside your home section). <br/><img src="assets/images/nivo_shortcode.png" width="358" height="336" class="clear"><br>
+        </li>
+        <li>And the result is: <br><img src="assets/images/nivo_slider.png" width="660" height="265"></li>
+      </ol>
+      <h4><strong>Multiple sliders</strong></h4>
+      <p>When creating or editing a slide, you have an option to assign it to a specific category. By doing so, you can display all slides that belong to a specific category inside a different slider, and therefore create multiple sliders.</p>
+      <p><img src="assets/images/slider_category.png" width="300" height="198"></p>
+      <p>To display all slides inside a single category, use [flexslider category=&quot;category name&quot;] shortcode (if you changed the category slug, then use  slug instead of the name). </p>
+      <p><img src="assets/images/slider_multiple_shortcode.png" width="316" height="107"></p>
+      <hr>
+<h3 id="htmlStructure6"><strong id="authors">G) Adding authors</strong> - <a href="#toc">top</a></h3>
+<p>You can add authors  inside 'Authors&gt;Add New Author' sections of your dashboard. </p>
+<ol>
+  <li>At the top, type author's name, in the textarea add authors biography/details, throught the feautured image option add an image, and at the bottom you have an option to add a caption to the image.<img src="assets/images/authors_adding.png" width="747" height="614"></li>
+  <li>The Authors list will be displayed where [authors] shortcode is placed (if you have imported the demo content, that will be inside your 'about' section.<br><img src="assets/images/authors_shortcode.png" width="355" height="336" class="clear"><br>
+  </li>
+  <li>And the result is the following (if you have only one author, the tabs list at the top will not be shown):<img src="assets/images/author_result.png" width="742" height="460"></li>
+  </ol>
+ <h4><strong>Multiple authors lists</strong></h4>
+      <p>When adding or editing author's details, you have an option to assign it to a specific category. By doing so, you can display all authors that belong to a specific category inside a different list, and therefore create multiple authors lists.</p>
+      <p><img src="assets/images/authors_category.png" width="297" height="180"></p>
+      <p>To display all slides inside a single category, use [flexslider category=&quot;category name&quot;] shortcode (if you changed the category slug, then use  slug instead of the name). </p>
+    <p><img src="assets/images/author_category_shorcode.png" width="284" height="105"></p><hr>
+        <h3><strong id="portfolio">H) Adding items to  Portfolio</strong> - <a href="#toc">top</a>        </h3>
+        <ol>
+          <li>
+            As with  Flexslider, first we need to find a place where we want to display our portfolio/gallery. We do this by placing [portfolio] shortcode . If you've imported the demo content, that shortcode is placed inside 'Portfolio' section.<img src="assets/images/portfolio_shortcode.png" width="374" height="336"></li>
+          <li>
+          Next, we go to 'Portfolio&gt;Add New Item'. There we can enter an item title inside the title field and some short description inside the caption field. Add an  image through the 'Featured Image' panel by clicking the 'Set featured image' link. Apply one  or more categories for your item inside the 'Category' box if you are going to use category filtering (using Quicksand plugin). If you don't want to filter your items, you don't need to add any category. <img src="assets/images/portfolio_new_item.png" width="742" height="537"></li>
+          <li>And the result is: <img src="assets/images/portfolio_preview.png" width="747" height="300"></li>
+        </ol>
+        <p><strong>Note:</strong> If you don't want to filter your portfolio items, go to 'Appearance&gt;Theme Options&gt;Portfolio' and uncheck 'Enable category filtering inside portfolio'.
+        This will remove the filter list at the top.</p>
+<h4><strong>Multiple portfolios</strong></h4>
+      <p>The categories used for Quicksand filtering can be also used for displaying multiple portfolios, i.e. all  posts that belong to a single category can be displayed in a different portfolio. The shortcode  used for this is [portfolio category=&quot;category name&quot;]       (if you changed the category slug, then use  slug instead of the name).</p>
+    <p><img src="assets/images/portfolio_category_shortcode.png" width="256" height="102"></p><hr>
+        <h3 id="htmlStructure7"><strong id="form">H) Contact form</strong> - <a href="#toc">top</a></h3>
+      <ol>
+          <li>To set up a contact form, first install a plugin called 'Contact Form 7' (go to 'Plugins&gt;Add New', where you can find it using a search form).</li>
+          <li> After installation, a new menu item will appear in your dashboard menu, called 'Contact'. <img src="assets/images/contact_form_setup.png" width="745" height="466"><br/>There you can set up the elements you want to appear in your contact form. You can paste this code inside 'Form' area to get a form in two column layout: <br/>
+          <pre>	&lt;div class=&quot;eight columns&quot;&gt;
+	&lt;p&gt;Name: *&lt;br /&gt; [text* your-name] &lt;/p&gt;
+	&lt;p&gt;Email: *&lt;br /&gt; [email* your-email] &lt;/p&gt;
+	&lt;p&gt;Subject:&lt;br /&gt; [text your-subject] &lt;/p&gt;
+	&lt;/div&gt;
+
+	&lt;div class=&quot;eight columns&quot;&gt;
+	&lt;p&gt;What's on your mind? *&lt;br /&gt; [textarea your-message] &lt;/p&gt;
+	&lt;/div&gt;
+
+	&lt;p&gt;[submit &quot;Submit!&quot;]&lt;/p&gt</pre>
+          </li>
+          <li>When you are finished, click 'Save' button at the top and copy and paste the code you see on top inside your contact section. (Note: while this code is already imported with the demo content, you need to generate your own code and replace the one that is already there.)<img src="assets/images/contact_form_shortcode.png" width="713" height="392"></li>
+          <li>The final result is: <img src="assets/images/contact_result.png" width="746" height="303"><br/>
+          </li>
+      </ol>
+<hr>
+    <h3 id="htmlStructure5"><strong id="blog3">I) <span id="map">Google map</span></strong> - <a href="#toc">top</a></h3>
+    <p> If you want to display your location on a map, first you need to set you location  inside 'Appearance&gt;Theme Settings&gt;Google map'. </p>
+    <ol>
+      <li>There you can enter your  latitude and longitude, and set the desired zoom level. <br/><img src="assets/images/map_setup.png" width="776" height="239">You can get the coordinates of a location at <a href="http://maps.google.com/">Google Maps</a>. Just right-click on the map and select &quot;What's here?&quot;. The coordinates will  pop up in a  box when you click on the green arrow. The first decimal number is a latitude, second one is a longitude.<br/> <img src="assets/images/map_cord.png" width="382" height="347">
+      </li>
+      <li>The map will be displayed where [map] shortcode is placed. However, we still need a link that will   load the map once click. Because of that, we place a link with a class of '<em>google_map</em>' inside the subtitle field (you can place it inside main text area if you want). Full code for the link is <em><strong>&lt;a class=&quot;google_map&quot;&gt;Google map&lt;/a&gt;</strong></em>, and you can replace Google map text for your own.<br/><img src="assets/images/google_map_shortcode.png" width="793" height="876"></li>
+      <li>The result is (once the link is clicked):<img src="assets/images/map_result.png" width="785" height="396"><br/>
+    </li>
+    </ol>
+<hr>
+    <h3>&nbsp;</h3>
+    <h3><strong id="shortcodes">K) Shortcodes </strong> - <a href="#toc">top</a></h3>
+<p>This theme comes with a several predefined shortcodes that you can use to speed up your publishing.</p>
+<ul>
+  <li><strong>Layout and separator shortcodes</strong>  <br/>
+    When adding a content  inside a new page or inside a new section (but not inside blog post), you should place that content inside the layout shortcodes. By doing this, you can quickly layout your content on the page. <img src="assets/images/shortcodes_layout.png" width="700" height="492"><br/>
+    When using them, your content should be placed inside the opening and closing tags:<br/>
+    <pre>
+    [one]...[/one]
+    [three_fourths]...[/three_fourths]
+    [two_thirds]...[/two_thirds]
+    [one_half]...[/one_half]
+    [one_third]...[/one_third]
+    [one_fourth]...[/one_fourth]
+    </pre>
+    It is adviced to place [clear] shortcode every time the content goes to a new line (for example, after two [one_half] shorcodes applied). This basically breaks the content into new line and prevents possible aligning problems that may sometimes occur. <br>
+    If you want to place a  line separator, just place [separator] shorcode. When you place this shortcode, there is no need to add [clear] as well.Those shortcodes can be accessed from the button tool-bar. <br>
+    If you want to wrap the content inside the layout shorcode, select your content and just click one of the layout shorcodes buttons (1/4, 1/3, 1/2, 2/3, 3/4, 1)<br>
+    If you want to place [clear] or [separator] shorcode, first click on the place where you want for it to appear, and then click appropriate button (clr, --). <br/><br>
+    <strong>Notes:</strong><br>
+    - Don't place one layout shortcode inside another, that will break the layout.<br>
+    - Use layout shortcodes only inside regular pages or sections (<strong>not</strong> inside a blog post).<br>
+    - Since this theme uses <a href="http://www.getskeleton.com/#grid">Skeleton boilerple</a> (which is based on 960px system), you can use it's html layout classes instead of the shortcodes.</li>
+  <br/>
+    <li><strong>Flexslider:</strong><br>
+      You can place [flexslider category=&quot;&quot;] shortcode where you want the Flexslider to appear (usually in home section). Place it outside the layout shorcode, though. You can also display only slides that belong to a single category.</li><br>
+    <li><strong>Authors:</strong><br>
+You can place [authors category=&quot;&quot;] shortcode where you want your authors list to appear (usually the about section). Place it outside the layout shorcode, though. You can also display only authors that belong to a single category.</li>
+    <br/>  
+    <li><strong>Portfolio:</strong><br>
+      You can place [portfolio category=&quot;&quot;] shortcode where you want do display your portfolio/gallery.. You can also display only portfolio images that belong to a single category<br/> <br/>
+    <li><strong>Google map:</strong><br>
+      You can place [map] shortcode where you want do display a map with your location (usually the contact section).</li><br>
+    <li><strong>Icons:</strong><br>
+      Use 'icon' shortcode to display any icon from <a href="http://fortawesome.github.com/Font-Awesome/#all-icons">Font Awesome list</a> - as a name attribute, type the name you can see at the Font Awesome list. The example bellow will render pencl icon:<br>
+    <pre>
+	[icon name=icon-pencil]
+      </pre>
+      Instead of using shortcodes for placing icons, you can use html, as described at Font Awesome site. HTML code for the same pencil icon would be the following:<br>
+          <pre>
+	&lt;i class=&quot;icon-pencil&quot;&gt;&lt;/i&gt
+      </pre>
+    </li>
+    </li>
+</ul>
+<ul>
+  <li><strong>Buttons:</strong><br>
+     Use 'button' shortcode to get a regular button:<br/>
+    <pre>
+	[button link=&quot;#&quot; target=&quot;_new&quot; align=&quot;right&quot;]Button text[/button]
+      </pre>
+  </li>
+</ul>
+<hr>
+      <h3><strong id="plugins">L) Installing and Configuring Plugins </strong> - <a href="#toc">top</a></h3>
+      <p>To use the full potential of this theme, I suggested that you install the following plugins:</p>
+      <ul>
+        <li>
+          <p><a href="http://wordpress.org/extend/plugins/contact-form-7/"><strong>Contact Form 7</strong></a><br>
+          This plugin allows you to easily add a contact form to your site. How to apply this plugin is described under 'F) Contact form' section of this documentation.        </p>
+        </li>
+        <li><strong><a href="http://wordpress.org/extend/plugins/jquery-colorbox/">jQuery Colorbox</a></strong><br>
+        This theme does not have a lightbox built-in for viewing pictures (not including the one for portfolio section). For that reason, I suggest installing jQuery Colorbox plugin. After installing, just select 'Automate jQuery Colorbox for all images in pages, posts and galleries' inside plugin settings page, and you are set.</li>
+        <br>        
+        <li><strong><a href="http://wordpress.org/extend/plugins/post-types-order/">Post Types Order</a></strong><br>
+          This plugin allows you to change the order of your posts using a Drag and Drop Sortable javascript capability. This is especially useful inside   the portfolio and slider sections (reorder  portfolio and slider items).</li><br>
+         <li><strong><a href="http://wordpress.org/extend/plugins/shortcode-empty-paragraph-fix/">Shortcode empty Paragraph fix</a></strong><br>
+        This plugin remove empty paragraphs tags that WP usualy places when dealing with shortcodes (which results in an empty spaces that mess up the layout).</li>
+      </ul>
+
+<hr>
+        <h3 id="htmlStructure8"><strong id="settings">M) Theme Settings</strong> - <a href="#toc">top</a></h3>
+        <p>Theme settings can be found at 'Appearance&gt;Theme Options'. There, you can set your:</p>
+        <ul>
+          <li>Upload your logo and favicon:</li>
+          <li>Enable or disable parallex scrolling effect</li>
+          <li>Configure Flexslider</li>
+          <li>Toogle Quicksand category filtering inside porfolio</li>
+          <li>Configure Google map</li>
+          <li>Set social Profiles</li>
+          <li>Type copyright information and toogle RSS feed icon</li>
+          <li>Set your general background image<br/>
+          </li>
+          <li>Add custom CSS code</li>
+        </ul>
+        <p>For font selection head to   'Appearance&gt;Fonts  Options', where you can chose between 12  fonts for various sections. Please note  that in order to use 'Playfair Display Italic' font, you'll need to have 'Playfair Display' font selected as well.</p>
+<hr>
+        <h3><strong id="php">N) PHP files</strong> - <a href="#toc">top</a></h3>
+      <p>Templates and other PHP files used by this theme:</p>
+		<ul>
+		  <li><strong>404.php</strong> - displays 'page not found' page<br>
+	      </li>
+		  <li><strong>archive.php</strong> - displays a list of posts for a specific category or an archive inside the blog<br>
+	      </li>
+		  <li><strong>author.php</strong> - displays author's information, website and posts</li>
+		  <li><strong>authors.php</strong> - template for displaying authors sections (in about section)</li>
+		  <li><strong>comments.php</strong> - handles the comments</li>
+		  <li><strong>flexslider.php</strong> - template for displaying Flexslider</li>
+		  <li><strong>footer.php</strong> - site's footer</li>
+		  <li><strong>functions.php</strong> - all functions used in this theme</li>
+		  <li><strong>header.php</strong> - theme's header</li>
+		  <li><strong>homepage.php</strong> - template for displaying homepage sections</li>
+		  <li><strong>index.php</strong> - template for blog page</li>
+		  <li><b>metadata-blog.php</b> - template for displaying blog's title, date of post, author, category and  featured image<br>
+		  </li>
+		  <li><strong>page.php</strong> - page template</li>
+		  <li><strong>paged-nav.php</strong> - numbered navigation for blog pages</li>
+		  <li><strong>portfolio.php</strong> - template for displaying portfolio items</li>
+		  <li><strong>search.php</strong> - handles search results for the blog</li>
+		  <li><strong>searchform.php</strong> - search form for the blog</li>
+		  <li><strong>sidebar.php</strong> - right sidebar for the blog</li>
+		  <li><strong>single.php</strong> - single blog post</li>
+		  <li><strong>single-author-typer.php</strong> - template used for preview when adding authors</li>
+		  <li><strong>single-portfolio_type.php</strong> - template used for preview when adding items to portfolio</li>
+		  <li><strong>single-sections.php</strong> - template used for preview when adding homepage sections</li>
+		  <li><strong>single-slider_type.php</strong> - template used for preview when adding items to Flexslider</li>
+      </ul>
+		<ul>
+		  <li>/lib/<strong>blog-comments.php</strong> - comments functions for blog</li>
+		  <li>/lib/<strong>fonts.php</strong> - fonts list available at 'Appearance&gt;Font Options' page.</li>
+		  <li>/lib/<strong>localisation.php</strong> - localisation code</li>
+		  <li>/lib/<strong>meta-boxes.php</strong> - all metaboxes used in this theme</li>
+		  <li>/lib/<strong>post-types.php</strong> - all post types used in this theme (for homepage sections, flexslider, authors and portfolio)</li>
+		  <li>/lib<strong>/shortcodes.php</strong> - contains all shortcodes that can be used with this theme</li>
+		  <li>/lib/<strong>theme-options.php</strong> - contains all options that are displayed in 'Appearance&gt;Theme Options'. This are options for OptionTree plugin.</li>
+		  <li>/lib/<strong>theme-options-filters.php</strong> - Some filters for Theme Options page and metaboxes (display custom images for background options)</li>
+		  <li>/lib/<strong>TinyMCE.php</strong> - custom buttons displayed inside WP visual editor</li>
+</ul>
+		<hr>
+	  <h3><strong id="css_files">O) CSS Files </strong> - <a href="#toc">top</a></h3>
+<p>CSS files used by this theme:</p>
+	  <ul><li><strong>style.css</strong> - main style sheet</li>
+	    <li>lib/css/<strong>font-awesome.min.css</strong> - style steet for Font Awesome icons font</li>
+	    <li>lib/css/<strong>skeleton.css</strong> - style steet for Skeleton responsive boilerplate</li>
+	  </ul>
+<hr>
+		
+		<h3 id="javascript"><strong id="js">P) JavaScript</strong> - <a href="#toc">top</a></h3>
+		
+		<p>This theme imports folowing Javascript files:</p>
+		<ul>
+		  <li>lib/js/<strong>custom.js</strong> - custom scripts (moblile navigation button, tabs, tooltips)</li>
+		  <li>lib/js/<strong>custom_homepage.js</strong> - custom script for homepage (waypoint plugin scrolling code)</li>
+		  <li>lib/js/<strong>jquery.easing.1.3.js</strong> - jQuery plugin from for advanced easing options</li>
+		  <li>lib/js/<strong>jquery.flexslider-min.js</strong> - Flexslider plugin</li>
+		  <li>lib/js/<strong>flexslider_script.js</strong> - Flexslider plugin script</li>
+		  <li>lib/js/<strong>jquery.galleriffic.js</strong> - Galleriffic plugin (for displaying images inside portfolio)</li>
+		  <li>lib/js/<strong>jquery.quicksand.js</strong> - plugin for reordering and filtering items with a  shuffling animation (for filtering images inside portfolio)</li>
+		  <li>lib/js/<strong>jquery.stellar.min.js</strong> - Stellar.js plugin for parallax effect</li>
+		  <li>lib/js/<strong>jquery.tools.min.js</strong> - jQuery Tools plugin (only tooltip and tabs included).</li>
+		  <li>lib/js/<strong>map_script.js</strong> - script for Google map</li>
+		  <li>lib/js/<strong>portfolio_script.js</strong> - script for portfolio section</li>
+          <li>lib/js/<strong>tinymce.js</strong> - scripts for custom buttons inside WP visual editor</li>
+          <li>lib/js/<strong>waypoints.min.js</strong> -  Waypoints plugin (a small jQuery plugin that makes it easy to execute a function whenever you scroll to an element)</li>
+		</ul>
+<hr>
+		
+		<h3 id="psdFiles"><strong id="psdfiles">Q) PSD</strong> - <a href="#toc">top</a></h3>
+		
+		<p>Photoshop  mockup is located inside<em> </em><strong>PSD</strong> folder</p>
+		<ul>
+		  <li><strong>mockup.psd</strong> - main photoshop file</li>
+		</ul>
+	  <hr>
+        
+	  <h3 id="psdFiles"><strong id="fonts">R) Fonts</strong> - <a href="#toc">top</a></h3>
+		
+	  <p>This theme uses several Google fonts (available at 'Appearance&gt;Fonts Options'), as well as Font Awesome icons font.</p>
+	  <hr>
+<h3 id="localizing"><strong id="localizing">S) Localizing theme</strong> - <a href="#toc">top</a></h3>
+		<p>This theme is localization ready (for left to right languages). Inside <strong>lang</strong> folder is located <strong>default.po</strong> file, which you can use to translate this theme  into your language.</p>
+        <ol>
+          <li>Open default.po file with a program like <a href="http://www.poedit.net/">Poedit</a></li>
+          <li>Translate desired text into your language</li>
+          <li>If you are translating into, for example, German language, save this file as <strong>de_DE.po</strong> (you will need to type your language code instead of de_DE) into the same folder. If you are using Poedit, the corresponding mo file will be automatically created  (check if the 'Automatically compile .mo file on save' is enabled in File&gt;Preferences&gt;Editor') when saving. The end result is to have <strong>de_DE.mo</strong> file inside lang folder.</li>
+          <li>Last thing to do is to open 'wp-config.php' inside your root WordPress folder and define your language on this line (in this case, we defined German language): <br/>
+          <pre>define('WPLANG', 'de_DE')</pre></li>
+        </ol>
+      <p>Please note that beside localized theme, you should also have <a href="http://codex.wordpress.org/WordPress_in_Your_Language">localized WordPress instalation</a>, in order to have translated everything that is displayed  (like the comments section). </p>
+<hr>
+		
+		<h3 id="credits"><strong id="credits">T) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+	  <ul>
+	    <li>jQuery  -<a href="http://jquery.com/">http://jquery.com/</a></li>
+	    <li>OptionTree - <a href="https://github.com/valendesigns/option-tree">https://github.com/valendesigns/option-tree</a></li>
+	    <li>Skeleton - <a href="http://www.getskeleton.com/">http://www.getskeleton.com/</a></li>
+	    <li>CSS reset by Eric Meyer  - <a href="http://meyerweb.com/">http://meyerweb.com/eric/tools/css/reset/</a></li>
+	    <li>jQuery Tools - <a href="http://flowplayer.org/tools/">http://flowplayer.org/tools/</a></li>
+	    <li>jQuery Easing - <a href="http://gsgd.co.uk/sandbox/jquery/easing/">http://gsgd.co.uk/sandbox/jquery/easing/</a></li>
+	    <li>jQuery Waypoints - <a href="http://imakewebthings.github.com/jquery-waypoints/">http://imakewebthings.github.com/jquery-waypoints/</a></li>
+	    <li>jQuery Quicksand - <a href="http://razorjack.net/quicksand/">http://razorjack.net/quicksand/</a></li>
+	    <li>Stellar.js - <a href="http://markdalgleish.com/projects/stellar.js/">http://markdalgleish.com/projects/stellar.js/</a></li>
+	    <li>Galleriffic - <a href="http://www.twospy.com/galleriffic/">http://www.twospy.com/galleriffic/</a></li>
+	    <li>Subtle Patterns - <a href="http://subtlepatterns.com/">http://subtlepatterns.com/</a></li>
+	    <li>Font Awesome - <a href="http://fortawesome.github.com/Font-Awesome/">http://fortawesome.github.com/Font-Awesome/</a></li>
+      </ul>
+<hr>
+		
+		<p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p> 
+		
+		<p class="append-bottom alt large"><strong>dabaman</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>

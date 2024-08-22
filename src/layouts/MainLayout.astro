@@ -1,20 +1,23 @@
 ---
 import BaseHead, { type Props as HeadProps } from "@/components/BaseHead.astro";
 import Header from "../components/Header.astro";
-import "../styles/tailwind.css";
+import Footer from "../components/Footer.astro";
+// import "../styles/tailwind.css";
+import "../styles/styles.css";
 
 export type Props = HeadProps;
 
 const { ...head } = Astro.props;
-// console.log("head", head);
+console.log("head", head);
 ---
 
 <html lang="en">
   <head>
     <BaseHead />
   </head>
-  <body class="mx-auto bg-lineColor min-h-max text-forestGreen font-sans min-w-[300px]">
+  <body class="">
     <Header />
     <slot />
+    <Footer />
   </body>
 </html>

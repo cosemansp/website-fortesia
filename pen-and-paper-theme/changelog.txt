@@ -1,0 +1,57 @@
+==============================================
+			"PEN & PAPER WP" CHANGELOG
+==============================================
+
+
+v1.6 - September 02 2013
+==========================
+
+- Updated OptionTree to v2.1.3
+- Updated FontAwesome to v3.2.1 
+- New social media icons inside footer
+- New shortcode buttons inside visual editor
+- Removed search filters
+- Minor code and css fixes
+
+
+v1.5.1 - August 01 2013
+==========================
+
+- New demo xml file
+
+
+v1.5 - July 18 2013
+==========================
+
+- Added option to have unlimited portfolios, authors sections and Flexsliders
+- Added dropdown support
+- Fixed missing navigation for archives and author templates
+- Fixed wrong path to the language folder
+- Improved single templates for custom post types
+- Updated language file
+- Updated documentation
+- Minor code and css fixes
+
+
+v1.1 - May 20 2013
+==========================
+
+- Updated scripts to support jQuery 1.9
+- Updated OptionTree to v2.0.16
+- Fixed the problem inside the options page where checkboxes were being automaticly selected
+- Quicksand filtering is now based on filter's slug instead of name (to avoid problems when using non-Latin language)
+- Minor code and css fixes
+
+
+v1.0.1 - January 30 2013
+==========================
+
+- Fixed conflict issue with "Jetpack" plugin, that resulted in doubling Quicksand filter links
+- Removed limitation for number of portfolio images
+- 'Page with sidebar' template added
+
+
+v1.0 - December 20 2012
+==========================
+
+- First version

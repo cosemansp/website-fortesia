@@ -2,32 +2,546 @@
 import { useStoryblokApi, type ISbStoriesParams } from "@storyblok/astro";
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import Teaser from "../storyblok/Teaser.astro";
+import isPreview from "../utils/isPreview";
 
-// const storyblokApi = useStoryblokApi();
+const storyblokApi = useStoryblokApi();
+// const { data } = await storyblokApi.get(`cdn/stories`, {
+//   version: isPreview() ? "draft" : "published",
+//   starts_with: "articles/",
+//   is_startpage: false,
+//   // language,
+// });
+
+// const articles = data.stories;
+
+const { data } = await storyblokApi.get("cdn/stories/home", {
+  version: "draft",
+});
+
+const story = data.story;
+// console.log("story", story.content);
 ---
 
 <MainLayout>
-  <div class="md:h-[calc(100vh-51px)] md:-mt-30 bg-cover bg-hero bg-no-repeat">
-    <div class="flex justify-center items-center m-30">
-      <img
-        src="art-of-nature-logo2.png"
-        loading="lazy"
-        class="inline-block mt-10 lg:mt-20 w-auto h-[300px] md:h-[500px] max-w-full opacity-100"
-      />
-    </div>
-    <div class="flex justify-center items-center">
-      <div class="flex flex-col align-middle absolute top-auto bottom-0">
-        <div
-          class="block static mx-2 mb-1 max-w-full font-sans font-bold tracking-wider leading-4 text-center text-white uppercase opacity-90 xl:font-sans xl:text-white"
-          style="font-size: 10px;"
+  <!-- Home section -->
+  <section
+    id="home"
+    class="slide section-active"
+    data-stellar-background-ratio="0.0"
+    style="background-position: 0px 0px;"
+  >
+    <div class="container">
+      <!-- <Teaser blok={story.content.body[0]} /> -->
+      <hgroup>
+        <h1>Tekenen &amp; Schilderen</h1>
+      </hgroup>
+      <p style="text-align: center;">
+        <span style="color: #808080;"
+          ><strong><a href="https://www.katriendanschutter.be/wp-content/uploads/20150521-DSC_8303.jpg"> </a></strong
+          ></span
         >
-          SCROLL
-        </div>
-        <div class="flex justify-center">
-          <div class="inline-block mt-1 w-px h-10 bg-white"></div>
+      </p><div class="twelve columns offset-by-two clearfix">
+        <strong>
+          <div class="flexslider clearfix styled">
+            <ul class="slides">
+              <li>
+                <img src="/images/slides/slide1.jpg" />
+              </li>
+              <li>
+                <img src="/images/slides/slide2.jpg" />
+              </li>
+              <li>
+                <img src="/images/slides/slide3.jpg" />
+              </li>
+            </ul>
+          </div>
+        </strong>
+      </div>
+      <div class="sixteen columns">
+        <h2 style="text-align: center;">
+          <b><strong>ACADEMIE VOOR CREATIEVE ONTWIKKELING</strong></b>
+        </h2>
+        <h2 style="text-align: center;">
+          <blockquote>
+            Leer tekenen naar de zienswijze van de rechterhersenhelft en ontdek ook jij dat je een kunstenaar bent.
+          </blockquote>
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Home section -->
+  <section
+    id="about"
+    class="slide section-active"
+    data-stellar-background-ratio="0.5"
+    style='background: url("/images/grey.png") 0px 693.824px repeat;'
+  >
+    <div class="container">
+      <hgroup>
+        <h1>Over Katrien Danschutter</h1>
+      </hgroup>
+
+      <div class="separator"></div>
+
+      <div class="panes">
+        <div class="clearfix">
+          <figure class="eight columns">
+            <div class="styled">
+              <img
+                width="432"
+                height="427"
+                src="/images/katrien-432x427.png"
+                class="attachment-author-thumbnail colorbox-51 wp-post-image"
+                alt=""
+              />
+            </div>
+          </figure>
+          <div class="eight columns">
+            <h3></h3>
+            <p>
+              <span style="color: #000000;"
+                >” Heb jij dat ook wanneer je iemand ziet tekenen of schilderen, dat wil ik ook. Tijd hiervoor
+                maken&nbsp;kan tijdens het atelier en workshops.&nbsp;</span
+              ><span style="color: #000000;"
+                >Tekenen en schilderen op een spontane manier geeft een rijke
+                voldoening.&nbsp;&nbsp;Je&nbsp;creativiteit aan spreken en genieten van het moment.&nbsp;Dit wil ik
+                graag doorgeven aan anderen.&nbsp;”</span
+              >
+            </p>
+            <p>&nbsp;</p>
+            <p>
+              Zie&nbsp;<a href="http://art.katriendanschutter.be/">hier</a>&nbsp;voor enkele van mijn werken.&nbsp;<a
+                href="file:///Users/katrien/Google%20Drive/Documents/FORTESIA%20MAILS%20&%20CONTACT%20ADRESSEN%20/art.katriendanschutter.be"
+                ><br />
+              </a><a href="https://www.instagram.com/katriendanschutter"
+                >www.instagram.com/katriendanschutter<br />
+              </a><a href="https://www.facebook.com/katrien.danschutter">www.facebook.com/katrien.danschutter</a>
+            </p>
+            <p><span style="color: #808080;">&nbsp;</span></p>
+            <p><strong>&nbsp;</strong></p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <p>some text</p>
+  </section>
+
+  <!-- Test Section -->
+  <section
+    id="reacties"
+    class="slide section-active"
+    data-stellar-background-ratio="0.5"
+    style='background: url("/images/diamond_upholstery.png") 0px 3385.51px repeat;'
+  >
+    <div class="container">
+      <hgroup>
+        <h1>Reacties van cursisten</h1>
+        <h2 class=""><span> </span></h2>
+      </hgroup>
+      <div class="eight columns">
+        <p>
+          Dag Katrien, we leren heel veel bij via kunst. Na de tekensessie ben ik heel ontspannen en voel ik dat dit mij
+          heel goed doet.&nbsp;De tekentechnieken worden heel goed aangeleerd, ik boek echt vooruitgang in mijn
+          tekenkunst. Deze cursus is zeker aan te raden aan ieder die graag wil leren tekenen.&nbsp; Tekenen&nbsp;werkt
+          heel ontspannend.<br />
+          Lieve Katrien ik ben jou heel dankbaar voor al deze mooie, warme ondersteunende en tegelijk leerzame momenten die
+          ik bij jou mag beleven.<br />
+          <strong>Vera</strong>
+        </p>
+        <p>
+          We hebben een kleine maar leuke groep.&nbsp;De sfeer is heel fijn en rust gevend.&nbsp;Tijd voor een babbel
+          tijdens de pauze met een lekker tasje koffie en een koekje, ervaringen worden gedeeld. Je hebt geen ervaring
+          nodig.&nbsp;Iedereen doet het op haar manier. Natuurlijk bijgestaan door de zeer ervaren les geefster.&nbsp;We
+          leren allerhande technieken waardoor het vlotter verloopt en waardoor je goesting krijgt om stapjes verder te
+          gaan.&nbsp;Bij Katrien moet niets het belangrijkste is dat je je er goed bij voelt en dat vind ik het leuke
+          bij deze lessen. Je komt bij haar binnen en je voelt de rust en je gaat heel ontspannen buiten.<br />
+          Katrien dank je wel.<br />
+          <strong>Rita</strong>
+        </p>
+        <p>
+          Binnen een gezellige en sfeervolle ruimte, met mooie muziek op de achtergrond kom ik tot rust tijdens het
+          intens bezig zijn met de gegeven opdracht; lijnen trekken. Het proberen volumes te zoeken binnen een tekening
+          en dan juist over te brengen op papier,&nbsp;spelen met verbindingen aan te brengen wat een verrassende en
+          leuke tekening&nbsp;geeft.<br />
+          Het werken met houtskool en verschillende potloden van dikte enz….<br />
+          Blij dit alles te experimenteren.<br />
+          <strong>Lut</strong>
+        </p>
+      </div>
+      <div class="eight columns">
+        <p>
+          Over de jaren heb ik meerdere pogingen gedaan om te tekenen en te schilderen.&nbsp; Het materiaal wat ik van
+          die periodes bewaard heb is daarvan getuige.&nbsp; In mijn ééntje lukte het niet en ik haakte telkens af omdat
+          de structuur en de techniek ontbraken.
+        </p>
+        <p>
+          Al na de eerste les&nbsp; in jouw atelier wist ik dat het dit keer wel zou lukken.&nbsp; Jouw creatieve geest,
+          ondersteuning en ervaring gaven me het vertrouwen om tekeningen te maken waar ik spontaan nooit zou aan
+          begonnen zijn.&nbsp;&nbsp; Ik heb geleerd dat ik met aandachtig kijken en met geduld het gewenste resultaat
+          bekom.
+        </p>
+        <p>
+          Elke week met gelijkgestemden samenkomen om te tekenen betekent een meerwaarde in de huidige moeilijke Corona
+          tijden .&nbsp; De ateliers zijn nooit saai, er zijn nooit spanningen en als ons iets een keer minder goed lukt
+          kunnen we met humor en met nieuwe moed herbeginnen.&nbsp; We hebben elk onze eigen stijl en we wisselen
+          ervaringen uit.&nbsp; Ook dat is leerrijk en interessant.
+        </p>
+        <p>
+          Katrien, kunnen tekenen heeft mijn leven een extra dimensie gegeven.&nbsp; Dat heb ik voor het grootste deel
+          aan jou te danken.<br />
+          <strong>Martine</strong>
+        </p>
+        <div class="eight columns"></div>
+        Het is ondertussen al bijna een jaar geleden dat ik de eerste maal aanbelde aan jouw huis.<p></p>
+        <div>Vanaf het ogenblik dat ik binnenstapte en me aan de tafel zette voelde ik me thuis.</div>
+        <div>De rust en de sfeer in “ons atelier” voelden onmiddellijk warm , gezellig en kunstig aan.</div>
+        <div></div>
+        <div>Ik had buiten wat technisch tekenen en kindertekeningen me nooit bezig gehouden met tekenen.</div>
+        <div>
+          De manier waarop we door jou ingewijd&nbsp; worden in de kunst van het tekenen is&nbsp; fantastisch om mee te
+          maken.
+        </div>
+        <div>
+          In begin voelde ik me onwennig om de hele tijd lijnen, wat bij mij zelfs geen rechte lijnen waren, te tekenen
+          op een blad.
+        </div>
+        <div>
+          Maar na verloop van tijd besefte ik dat, zoals jij het zo mooi kan zeggen: “… er moet inkomen…”&nbsp; voor je
+          start met het echte werk.
+        </div>
+        <div></div>
+        <div>Uw werkwijze voor het stimuleren van de rechter hersenhelft, was voor mij ook een openbaring.</div>
+        <div>
+          Ik had nooit gedacht, dat ik dank zij deze manier van tekenen zulke mooie resultaten op papier zou kunnen
+          zetten.
+        </div>
+        <div>Ik zie er telkens naar uit om naar het atelier te komen en nieuwe dingen bij te leren.</div>
+        <div></div>
+        <div>
+          Bedankt voor de mooie, gezellige en leerrijke uren die we met z’n&nbsp; allen bij jou al hebben doorgebracht !
+        </div>
+        <div><strong>Walter</strong></div>
+        <div><div class="eight columns"></div></div>
+        <div></div>
+        <div>
+          Ik zie elke woensdag uit naar de cursus. De manier waarop ze gegeven wordt leert mij beter kijken en tekenen
+          wat ik zie en niet wat ik denk dat ik zie. De sfeer is ook aangenaam ondanks dat het nu via Zoom gegeven
+          wordt.
+        </div>
+        <div>
+          <strong><strong><strong><strong><strong><strong>Rachel</strong></strong></strong></strong></strong></strong>
+        </div>
+        <div><div class="eight columns"></div></div>
+        <div>
+          <strong><strong><strong><strong><strong><strong><br /> </strong></strong></strong></strong></strong></strong
+          >Altijd heb ik willen leren schetsen. Maar eigenlijk&nbsp;had ik nauwelijks ervaring met tekenen. Graag wilde
+          ik stilstaan, kijken en in me opnemen van de dingen om me heen, in plaats van het nemen van een vluchtige
+          foto.&nbsp; Tijdens het tekenatelier heb ik leren kijken en oog voor detail gekregen. De lessen zijn
+          aangenaam, rustig en voelen aan als onthaasting. In vogelvlucht werd ik meegenomen in diverse aspecten van het
+          tekenen. Op eigen tempo heb de basis van het tekenen geleerd. Steeds heb ik in potlood gewerkt omdat ik dat
+          graag wilde. Een fijne ervaring waar ik in de toekomst graag mee verder ga.<br />
+          <strong>Marc</strong>
+        </div>
+        <div><div class="eight columns"></div></div>
+        <div></div>
+        <div>
+          Na vele jaren waarbij mijn aandacht opgeslorpt werd door werk en gezin, heb ik het plezier van het tekenen
+          herontdekt bij Katrien. &nbsp;De opdrachten en technieken varieerden, waardoor het zeer boeiend bleef. Er is
+          duidelijk aandacht voor techniek en daardoor heb ik heel wat stappen vooruit gezet. Maar daarnaast werden we
+          ook uitgedaagd om de creativiteit te laten stromen, wat het geheel speels en uitdagend maakte. Dank je Katrien
+          om met je kritische blik voor details en verhoudingen, met je ruime palet aan technieken en je uitdagende
+          opdrachten, mij terug naar mijn passie te begeleiden. De cursus is een aanrader voor beginners maar ook mensen
+          met tekenervaring kunnen veel leren en ontdekken.<br />
+          Het was alvast fijn en helend om in het groepje terug tot tekenen te komen.<br />
+          Wel bedankt.<br />
+          <strong>Colette</strong>
+        </div>
+        <div><div class="eight columns"></div></div>
+        <div></div>
+        <div>
+          <div dir="auto">
+            Ik wilde graag wenkbrauwen tatoeëren als schoonheidsspecialiste. In de klassieke opleidingskanalen konden
+            lesgevers niet uitleggen hoe wenkbrauwen af te stemmen op de klant, hoe wenkbrauwen symmetrisch te tekenen,
+            hoe meerdere mooie vormen te creëren….
+          </div>
+          <div dir="auto"></div>
+          <div dir="auto">
+            Katrien haalde me over mijn teken-angst. Als ik ergens blokkeerde, wist ze hoe dit weg te werken. Ze is
+            altijd rustig en geduldig, flexibel om de les op vraag van de klant aan te passen, …
+          </div>
+          <div dir="auto"></div>
+          <div dir="auto">
+            Ondertussen denk ik dat Katrien de perfecte wenkbrauw styliste geworden is. Maar ééntje die haar kennis met
+            anderen delen wil.
+          </div>
+          <div dir="auto"></div>
+          <div dir="auto">
+            Ik volgde de lessen digitaal tijdens corona van bij mij thuis. Dit bespaarde me heel wat tijd.
+          </div>
+          <div dir="auto">XX</div>
+          <div dir="auto"><strong><strong>Nancy</strong></strong></div>
+          <div dir="auto"><div class="eight columns"></div></div>
+          <div dir="auto"></div>
+          <div dir="auto">
+            Met een rugzak vol mislukte pogingen om te leren tekenen, ging ik deze keer met enige aarzeling op reis met
+            Katrien. Een tocht van acht etappes, kompas gericht op de rechter hersenhelft, vol verrassingen. Soms werd
+            er blind getekend, dan weer ondersteboven, vooral ‘geen’ weten. Maar telkens was Katrien onze gids er om ons
+            het juiste pad te wijzen. Een woord dat ik nooit gehoord heb: ‘fout’, wel steeds een aanmoediging om mijn
+            zelfvertrouwen op te krikken. Een prachtige reisweg in het gezelschap van lieve reisgenoten, elkaar steunend
+            als het eens niet zo vlot liep. Steeds werd er even tijd genomen voor verpozing en bezinning, omkijkend of
+            iedereen nog wel mee was. Ondertussen einddoel bereikt en met enige trots, vol bewondering onze tekeningen
+            bekeken, vaak verbazing, heb ik dit getekend. Nee ik vergeet de gids niet, dank u Katrien voor die
+            overheerlijke ervaring, meer dan geslaagd.
+          </div>
+          <div dir="auto">
+            <p>
+              Deze keer een rugzak mee vol tips en raadgevingen die nog vaak van pas zullen komen.<br />
+              <strong>Rita C.<br /> </strong>
+            </p><div class="eight columns"></div><strong> </strong><p></p>
+            <p>Toen ik in het atelier Katrien Danschutter binnenkwam voelde ik me meteen thuisgekomen.</p>
+            <p>
+              Na een paar eerdere pogingen niet-academisch tekenen en schilderen en een cursus aquarel, haakte ik na een
+              poosje af omdat ik daar gezelligheid miste en niet de aangename begeleiding genoot zoals bij Katrien.<br
+              />
+              Van nature ben ik zeer gevoelig voor stress, maar hier wordt mijn vertrouwen in mezelf als van nature aangesterkt
+              door de aparte huiselijke sfeer en de spontane groep.<br />
+              De begeleiding is heel intensief en ook heel persoonsgericht.<br />
+              Zo leren we alleen onze rechterhersenhelft gebruiken, waardoor t denken grotendeels wordt uitgeschakeld.<br
+              />
+              In het begin was de concentratie enkel gericht op het puntje van ons potlood en zo maakten we heel trage bewegingen
+              en bleven we in het moment.<br />
+              We tekenen geen ogen, pupillen, geen handen, echter mooie trage lijnen en krommingen en leren tegelijkertijd
+              ons lichaam voelen tijdens deze stappen.<br />
+              De bedoeling hiervan is tevens niet-resultaat gericht iets op papier te zetten, maar bij onszelf te blijven
+              gedurende de creatie van een werk.<br />
+              Ook voel ik als debutante geen concurrentie van medecursisten, de gezelligheid en intens warme gevoelens primeren
+              hier. Iedereen mag in zijn eigen moment zitten.<br />
+              Ondertussen hebben we verscheidene technieken geleerd en wordt mijn enthousiasme om zo nog eindeloos door te
+              gaan alleen maar verder aangewakkerd.
+            </p>
+            <div dir="auto"><strong>Jeannine</strong></div>
+            <div dir="auto"><div class="eight columns"></div></div>
+            <div dir="auto">
+              <div>
+                Dag Katrien<br />
+                Bedankt voor 8 geweldig fijne, leerzame tekenlessen!!
+              </div>
+              <div>Elke keer voelde ik me zeer welkom en geïnspireerd.</div>
+              <div>
+                <div>
+                  Ik leerde veel bij qua techniek, deed verschillende ideeën op en kan er verder mee aan de slag.
+                </div>
+              </div>
+              <div>
+                <div>Kortom, zeer waardevolle zomerworkshop in een tof groepje en aangename setting!</div>
+              </div>
+              <div>
+                <div><strong>Karin<br /> </strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="fotogalerij"
+    class="slide section-active"
+    data-stellar-background-ratio="0.0"
+    style="background-position: 0px 0px;"
+  >
+    <div class="container">
+      <hgroup>
+        <h1>Fotogalerij</h1>
+      </hgroup>
+      <div class="portfolio_container">
+        <div class="separator"></div>
+
+        <div class="portfolio_preview clearfix" style="display: none;">
+          <div class="contols_container clearfix">
+            <div class="controls" id="controls-0">
+              <a class="close"><i class="icon-remove"></i></a><div class="ss-controls">
+                <a href="#play" class="play" title=""><i class="icon-play"></i></a>
+              </div><div class="nav-controls">
+                <a class="prev" rel="history" title="" href="#9"><i class="icon-chevron-left"></i></a><a
+                  class="next"
+                  rel="history"
+                  title=""
+                  href="#2"><i class="icon-chevron-right"></i></a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="slideshow_container sixteen columns clearfix">
+            <div class="loading" id="loading-0" style=""></div>
+            <div id="slideshow-0" class="slideshow styled"></div>
+            <div class="caption eleven columns clearfix" id="caption-0"></div>
+          </div>
+        </div>
+
+        <div class="thumbs_container" id="thumbs" style="display: block;">
+          <ul class="thumbs clearfix">
+            <li class="one-third column selected">
+              <a
+                class="thumb styled colorbox-off"
+                href="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015.jpg"
+                title="Lijntekening onderste boven gestart en  verder afggwerkt"
+                rel="history"
+              >
+                <img
+                  src="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015.jpg"
+                  class="attachment-portfolio-thumbnail colorbox-420 wp-post-image"
+                />
+              </a>
+            </li>
+            <li class="one-third column selected">
+              <a
+                class="thumb styled colorbox-off"
+                href="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015.jpg"
+                title="Lijntekening onderste boven gestart en  verder afggwerkt"
+                rel="history"
+              >
+                <img
+                  src="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015.jpg"
+                  class="attachment-portfolio-thumbnail colorbox-420 wp-post-image"
+                />
+              </a>
+            </li>
+            <li class="one-third column selected">
+              <a
+                class="thumb styled colorbox-off"
+                href="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015.jpg"
+                title="Lijntekening onderste boven gestart en  verder afggwerkt"
+                rel="history"
+              >
+                <img
+                  src="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015.jpg"
+                  class="attachment-portfolio-thumbnail colorbox-420 wp-post-image"
+                />
+              </a>
+            </li>
+            <li class="one-third column selected">
+              <a
+                class="thumb styled colorbox-off"
+                href="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015.jpg"
+                title="Lijntekening onderste boven gestart en  verder afggwerkt"
+                rel="history"
+              >
+                <img
+                  src="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015.jpg"
+                  class="attachment-portfolio-thumbnail colorbox-420 wp-post-image"
+                />
+              </a>
+            </li>
+            <li class="one-third column selected" data-id="id-" data-type="">
+              <a
+                class="thumb styled colorbox-off"
+                href="http://farm3.static.flickr.com/2404/2538171134_2f77bc00d9.jpg"
+                title="Basis tonen en tinten schilderen"
+                rel="history"
+              >
+                <img
+                  src="http://farm3.static.flickr.com/2404/2538171134_2f77bc00d9.jpg"
+                  class="attachment-portfolio-thumbnail colorbox-422 wp-post-image"
+                />
+              </a>
+            </li>
+            <li class="one-third column selected">
+              <a
+                class="thumb styled colorbox-off"
+                href="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015.jpg"
+                title="Lijntekening onderste boven gestart en  verder afggwerkt"
+                rel="history"
+              >
+                <img
+                  src="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015.jpg"
+                  class="attachment-portfolio-thumbnail colorbox-420 wp-post-image"
+                />
+              </a>
+            </li>
+            <li class="one-third column" data-id="id-2" data-type="animals ">
+              <a
+                class="thumb styled colorbox-off"
+                href="http://farm3.static.flickr.com/2404/2538171134_2f77bc00d9.jpg"
+                title="Lijntekening onderste boven gestart en  verder afggwerkt"
+                rel="history"
+              >
+                <img
+                  src="http://farm3.static.flickr.com/2404/2538171134_2f77bc00d9.jpg"
+                  class="attachment-portfolio-thumbnail colorbox-131 wp-post-image"
+                />
+              </a>
+            </li>
+            <li class="one-third column" data-id="id-2" data-type="animals ">
+              <a
+                class="thumb styled colorbox-off"
+                href="http://farm3.static.flickr.com/2093/2538168854_f75e408156.jpg"
+                title="Lijntekening onderste boven gestart en  verder afggwerkt"
+                rel="history"
+              >
+                <img
+                  src="http://farm3.static.flickr.com/2093/2538168854_f75e408156.jpg"
+                  class="attachment-portfolio-thumbnail colorbox-131 wp-post-image"
+                />
+              </a>
+            </li>
+            <li class="one-third column selected" data-id="id-" data-type="">
+              <a
+                class="thumb styled colorbox-off"
+                href="http://farm3.static.flickr.com/2404/2538171134_2f77bc00d9.jpg"
+                title="Basis tonen en tinten schilderen"
+                rel="history"
+              >
+                <img
+                  src="http://farm3.static.flickr.com/2404/2538171134_2f77bc00d9.jpg"
+                  class="attachment-portfolio-thumbnail colorbox-422 wp-post-image"
+                />
+              </a>
+            </li>
+            <li class="one-third column selected">
+              <a
+                class="thumb styled colorbox-off"
+                href="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015.jpg"
+                title="Lijntekening onderste boven gestart en  verder afggwerkt"
+                rel="history"
+              >
+                <img
+                  src="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015.jpg"
+                  class="attachment-portfolio-thumbnail colorbox-420 wp-post-image"
+                />
+              </a>
+            </li>
+            <li class="one-third column" data-id="id-2" data-type="animals ">
+              <a
+                class="thumb styled colorbox-off"
+                href="http://farm3.static.flickr.com/2404/2538171134_2f77bc00d9.jpg"
+                title="Lijntekening onderste boven gestart en  verder afggwerkt"
+                rel="history"
+              >
+                <img
+                  src="http://farm3.static.flickr.com/2404/2538171134_2f77bc00d9.jpg"
+                  class="attachment-portfolio-thumbnail colorbox-131 wp-post-image"
+                />
+              </a>
+            </li>
+            <li class="one-third column" data-id="id-2" data-type="animals ">
+              <a
+                class="thumb styled colorbox-off"
+                href="http://farm3.static.flickr.com/2093/2538168854_f75e408156.jpg"
+                title="Lijntekening onderste boven gestart en  verder afggwerkt"
+                rel="history"
+              >
+                <img
+                  src="http://farm3.static.flickr.com/2093/2538168854_f75e408156.jpg"
+                  class="attachment-portfolio-thumbnail colorbox-131 wp-post-image"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 </MainLayout>

@@ -1,0 +1,659 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Pen and Paper 1.0\n"
+"POT-Creation-Date: 2013-07-17 17:45+0100\n"
+"PO-Revision-Date: 2013-07-17 17:46+0100\n"
+"Last-Translator: dabaman\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: __;_e;_x\n"
+"X-Poedit-Basepath: ./\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:11
+msgid "404 - Page not found"
+msgstr ""
+
+#: ../404.php:13
+msgid "Sorry, the page you're looking for has gotten lost!"
+msgstr ""
+
+#: ../archive.php:15
+msgid "Archive"
+msgstr ""
+
+#: ../archive.php:33 ../author.php:54 ../page-sidebar.php:36 ../page.php:34
+#: ../search.php:26 ../single.php:26
+msgid "Not found"
+msgstr ""
+
+#: ../archive.php:34 ../author.php:55 ../page-sidebar.php:37 ../page.php:35
+#: ../search.php:27 ../single.php:27
+msgid "Sorry, we can't find that."
+msgstr ""
+
+#: ../author.php:24
+msgid "About"
+msgstr ""
+
+#: ../author.php:31
+msgid "Visit"
+msgstr ""
+
+#: ../author.php:31
+msgid "'s website"
+msgstr ""
+
+#: ../comments.php:14
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: ../comments.php:27
+msgid "Comments"
+msgstr ""
+
+#: ../comments.php:48
+msgid "Trackbacks and Pingbacks"
+msgstr ""
+
+#: ../comments.php:63
+msgid "You must be"
+msgstr ""
+
+#: ../comments.php:65
+msgid "logged in"
+msgstr ""
+
+#: ../comments.php:67
+msgid "to post a comment."
+msgstr ""
+
+#: ../comments.php:72
+msgid "Reply"
+msgstr ""
+
+#: ../comments.php:72
+msgid "Post Reply"
+msgstr ""
+
+#: ../footer.php:19
+msgid "Twitter"
+msgstr ""
+
+#: ../footer.php:23 ../lib/theme-options.php:317
+msgid "Facebook"
+msgstr ""
+
+#: ../footer.php:27 ../lib/theme-options.php:329
+msgid "LinkedIn"
+msgstr ""
+
+#: ../footer.php:31 ../lib/theme-options.php:341
+msgid "Google +"
+msgstr ""
+
+#: ../footer.php:35 ../lib/theme-options.php:353
+msgid "Pinterest"
+msgstr ""
+
+#: ../footer.php:39
+msgid "RSS Feed"
+msgstr ""
+
+#: ../functions.php:190
+msgid "Blog Sidebar"
+msgstr ""
+
+#: ../functions.php:195
+msgid "Primary Navigation"
+msgstr ""
+
+#: ../index.php:17
+msgid "Continue reading..."
+msgstr ""
+
+#: ../index.php:21
+msgid "No posts yet!"
+msgstr ""
+
+#: ../metadata-blog.php:14 ../metadata-blog.php:39
+msgid "Posted by"
+msgstr ""
+
+#: ../metadata-blog.php:14 ../metadata-blog.php:39
+msgid "on"
+msgstr ""
+
+#: ../metadata-blog.php:39
+msgid "in"
+msgstr ""
+
+#: ../search.php:14
+msgid "Results for"
+msgstr ""
+
+#: ../sidebar.php:19 ../lib/post-types.php:113 ../lib/post-types.php:169
+#: ../lib/post-types.php:223
+msgid "Categories"
+msgstr ""
+
+#: ../sidebar.php:26
+msgid "Archives"
+msgstr ""
+
+#: ../single.php:39
+msgid "Previous post"
+msgstr ""
+
+#: ../single.php:40
+msgid "&larr; Previous post"
+msgstr ""
+
+#: ../single.php:43
+msgid "Next post"
+msgstr ""
+
+#: ../single.php:44
+msgid "Next post &rarr;"
+msgstr ""
+
+#: ../lib/blog-comments.php:21
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: ../lib/blog-comments.php:26
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: ../lib/blog-comments.php:27
+msgid "(Edit)"
+msgstr ""
+
+#: ../lib/fonts.php:33
+msgid "Font Options"
+msgstr ""
+
+#: ../lib/fonts.php:34
+msgid "Body Font"
+msgstr ""
+
+#: ../lib/fonts.php:35
+msgid "Headings Font"
+msgstr ""
+
+#: ../lib/fonts.php:36
+msgid "Links, subtitles, captions, and buttons Font"
+msgstr ""
+
+#: ../lib/fonts.php:39
+msgid "Use the form below to change fonts of your theme."
+msgstr ""
+
+#: ../lib/meta-boxes.php:13 ../lib/meta-boxes.php:159
+#: ../lib/meta-boxes.php:205 ../lib/meta-boxes.php:228
+msgid "Options"
+msgstr ""
+
+#: ../lib/meta-boxes.php:22 ../lib/meta-boxes.php:237
+msgid "Title"
+msgstr ""
+
+#: ../lib/meta-boxes.php:23
+msgid "Title of this section."
+msgstr ""
+
+#: ../lib/meta-boxes.php:31 ../lib/meta-boxes.php:246
+msgid "Subtitle"
+msgstr ""
+
+#: ../lib/meta-boxes.php:32 ../lib/meta-boxes.php:247
+msgid "This text will appear bellow the title, and inside curly brackets."
+msgstr ""
+
+#: ../lib/meta-boxes.php:40
+msgid "Background image"
+msgstr ""
+
+#: ../lib/meta-boxes.php:49 ../lib/theme-options.php:377
+msgid "Upload new image"
+msgstr ""
+
+#: ../lib/meta-boxes.php:58
+msgid "Background Repeat"
+msgstr ""
+
+#: ../lib/meta-boxes.php:59
+msgid ""
+"For small tillable image, chose \"Repeat All\", while for large fullscreen "
+"image, chose \"No Repeat\"."
+msgstr ""
+
+#: ../lib/meta-boxes.php:66
+msgid "No Repeat"
+msgstr ""
+
+#: ../lib/meta-boxes.php:71
+msgid "Repeat All"
+msgstr ""
+
+#: ../lib/meta-boxes.php:76
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: ../lib/meta-boxes.php:81
+msgid "Repeat Vertically"
+msgstr ""
+
+#: ../lib/meta-boxes.php:89
+msgid "Parallax Background Ratio"
+msgstr ""
+
+#: ../lib/meta-boxes.php:90
+msgid ""
+"Ratio of 0.5 would cause the background to scroll at half-speed, while a "
+"ratio of 1 would have no effect."
+msgstr ""
+
+#: ../lib/meta-boxes.php:168 ../lib/meta-boxes.php:214
+msgid "Caption"
+msgstr ""
+
+#: ../lib/meta-boxes.php:169 ../lib/meta-boxes.php:192
+msgid "Enter a short caption."
+msgstr ""
+
+#: ../lib/meta-boxes.php:191
+msgid "Image Caption"
+msgstr ""
+
+#: ../lib/meta-boxes.php:215
+msgid "Enter a caption."
+msgstr ""
+
+#: ../lib/meta-boxes.php:238
+msgid "Title of this page."
+msgstr ""
+
+#: ../lib/post-types.php:14 ../lib/post-types.php:15
+msgid "Homepage"
+msgstr ""
+
+#: ../lib/post-types.php:16 ../lib/post-types.php:17
+msgid "Add New Section"
+msgstr ""
+
+#: ../lib/post-types.php:18
+msgid "Edit section"
+msgstr ""
+
+#: ../lib/post-types.php:19
+msgid "New section"
+msgstr ""
+
+#: ../lib/post-types.php:20
+msgid "View section"
+msgstr ""
+
+#: ../lib/post-types.php:21
+msgid "Search sections"
+msgstr ""
+
+#: ../lib/post-types.php:22
+msgid "No sections found"
+msgstr ""
+
+#: ../lib/post-types.php:23
+msgid "No sections found in Trash"
+msgstr ""
+
+#: ../lib/post-types.php:47
+msgid "Custom link URL"
+msgstr ""
+
+#: ../lib/post-types.php:77 ../lib/post-types.php:78
+#: ../lib/theme-options.php:35
+msgid "Flexslider"
+msgstr ""
+
+#: ../lib/post-types.php:79 ../lib/post-types.php:80
+msgid "Add New Slide"
+msgstr ""
+
+#: ../lib/post-types.php:81
+msgid "Edit slide"
+msgstr ""
+
+#: ../lib/post-types.php:82
+msgid "New slide"
+msgstr ""
+
+#: ../lib/post-types.php:83
+msgid "View slide"
+msgstr ""
+
+#: ../lib/post-types.php:84
+msgid "Search slides"
+msgstr ""
+
+#: ../lib/post-types.php:85
+msgid "No slides found"
+msgstr ""
+
+#: ../lib/post-types.php:86
+msgid "No slides found in Trash"
+msgstr ""
+
+#: ../lib/post-types.php:114 ../lib/post-types.php:170
+#: ../lib/post-types.php:224
+msgid "Category"
+msgstr ""
+
+#: ../lib/post-types.php:133
+msgid "Authors"
+msgstr ""
+
+#: ../lib/post-types.php:134
+msgid "Author"
+msgstr ""
+
+#: ../lib/post-types.php:135 ../lib/post-types.php:136
+msgid "Add New Author"
+msgstr ""
+
+#: ../lib/post-types.php:137
+msgid "Edit author"
+msgstr ""
+
+#: ../lib/post-types.php:138
+msgid "New author"
+msgstr ""
+
+#: ../lib/post-types.php:139
+msgid "View author"
+msgstr ""
+
+#: ../lib/post-types.php:140
+msgid "Search authors"
+msgstr ""
+
+#: ../lib/post-types.php:141
+msgid "No authors found"
+msgstr ""
+
+#: ../lib/post-types.php:142
+msgid "No authors found in Trash"
+msgstr ""
+
+#: ../lib/post-types.php:187 ../lib/post-types.php:188
+#: ../lib/theme-options.php:39
+msgid "Portfolio"
+msgstr ""
+
+#: ../lib/post-types.php:189
+msgid "Add New Item"
+msgstr ""
+
+#: ../lib/post-types.php:190
+msgid "Edit Portfolio Item"
+msgstr ""
+
+#: ../lib/post-types.php:191
+msgid "New Portfolio Item"
+msgstr ""
+
+#: ../lib/post-types.php:192
+msgid "View Portfolio"
+msgstr ""
+
+#: ../lib/post-types.php:193
+msgid "Search Portfolio"
+msgstr ""
+
+#: ../lib/post-types.php:194
+msgid "No Portfolio Items Found"
+msgstr ""
+
+#: ../lib/post-types.php:195
+msgid "No Portfolio Items Found In Trash"
+msgstr ""
+
+#: ../lib/theme-options-filters.php:30
+msgid "Debut light"
+msgstr ""
+
+#: ../lib/theme-options-filters.php:35
+msgid "Diamond upholstery"
+msgstr ""
+
+#: ../lib/theme-options-filters.php:40
+msgid "Extra clean paper"
+msgstr ""
+
+#: ../lib/theme-options-filters.php:45
+msgid "Furley"
+msgstr ""
+
+#: ../lib/theme-options-filters.php:50
+msgid "Gray jean"
+msgstr ""
+
+#: ../lib/theme-options-filters.php:55
+msgid "Grey"
+msgstr ""
+
+#: ../lib/theme-options-filters.php:60
+msgid "Line paper"
+msgstr ""
+
+#: ../lib/theme-options-filters.php:65
+msgid "Noisy grid"
+msgstr ""
+
+#: ../lib/theme-options-filters.php:70
+msgid "Subtle dots"
+msgstr ""
+
+#: ../lib/theme-options-filters.php:75
+msgid "Tiny grid"
+msgstr ""
+
+#: ../lib/theme-options-filters.php:80
+msgid "None"
+msgstr ""
+
+#: ../lib/theme-options.php:27
+msgid " Logo and Favicon"
+msgstr ""
+
+#: ../lib/theme-options.php:31
+msgid "Homepage Settings"
+msgstr ""
+
+#: ../lib/theme-options.php:43
+msgid "Google Map"
+msgstr ""
+
+#: ../lib/theme-options.php:47
+msgid "Copyright and RSS"
+msgstr ""
+
+#: ../lib/theme-options.php:51
+msgid "Social Profiles"
+msgstr ""
+
+#: ../lib/theme-options.php:55
+msgid "Background"
+msgstr ""
+
+#: ../lib/theme-options.php:59 ../lib/theme-options.php:389
+msgid "Custom CSS"
+msgstr ""
+
+#: ../lib/theme-options.php:65
+msgid "Logo image"
+msgstr ""
+
+#: ../lib/theme-options.php:66
+msgid ""
+"If you have an image logo, you can upload it here (maximum 55px tall). "
+"Otherwise, your logo will be your site title (you can change it inside "
+"'Settings &gt; General')."
+msgstr ""
+
+#: ../lib/theme-options.php:77
+msgid "Favicon"
+msgstr ""
+
+#: ../lib/theme-options.php:78
+msgid "Upload your favicon as 16x16px icon (.ico) file."
+msgstr ""
+
+#: ../lib/theme-options.php:89
+msgid "Parallax effect"
+msgstr ""
+
+#: ../lib/theme-options.php:101
+msgid "Enable parallax background effect."
+msgstr ""
+
+#: ../lib/theme-options.php:108
+msgid "Control navigation"
+msgstr ""
+
+#: ../lib/theme-options.php:120
+msgid "Display control navigation (bullets)."
+msgstr ""
+
+#: ../lib/theme-options.php:127
+msgid "Directional navigation"
+msgstr ""
+
+#: ../lib/theme-options.php:139
+msgid "Display directional navigation (arrows)."
+msgstr ""
+
+#: ../lib/theme-options.php:146
+msgid "Animation"
+msgstr ""
+
+#: ../lib/theme-options.php:147
+msgid "Select animation type (fade or slide)."
+msgstr ""
+
+#: ../lib/theme-options.php:158
+msgid "Fade"
+msgstr ""
+
+#: ../lib/theme-options.php:163
+msgid "Slide"
+msgstr ""
+
+#: ../lib/theme-options.php:170
+msgid "Sliding direction"
+msgstr ""
+
+#: ../lib/theme-options.php:171
+msgid "Select the sliding direction (horizontal or vertical)."
+msgstr ""
+
+#: ../lib/theme-options.php:182
+msgid "Horizontal"
+msgstr ""
+
+#: ../lib/theme-options.php:187
+msgid "Vertical"
+msgstr ""
+
+#: ../lib/theme-options.php:194
+msgid "Filter portfolio categories"
+msgstr ""
+
+#: ../lib/theme-options.php:206
+msgid "Enable category filtering inside portfolio (using 'Quicksand' plugin)."
+msgstr ""
+
+#: ../lib/theme-options.php:213
+msgid "Latitude"
+msgstr ""
+
+#: ../lib/theme-options.php:214
+msgid ""
+"Enter your location latitude (from maps.google.com). <br /> \n"
+"For example: <i>-37.812537</i>"
+msgstr ""
+
+#: ../lib/theme-options.php:226
+msgid "Longitude"
+msgstr ""
+
+#: ../lib/theme-options.php:227
+msgid ""
+"Enter your location longitude (from maps.google.com). <br /> For example: "
+"<i>144.969041</i>"
+msgstr ""
+
+#: ../lib/theme-options.php:239
+msgid "Enter zoom level. Default: <i>15</i>"
+msgstr ""
+
+#: ../lib/theme-options.php:250
+msgid "Map style"
+msgstr ""
+
+#: ../lib/theme-options.php:251
+msgid "Display map in color or in black and white."
+msgstr ""
+
+#: ../lib/theme-options.php:262
+msgid "Black and white"
+msgstr ""
+
+#: ../lib/theme-options.php:267
+msgid "Color"
+msgstr ""
+
+#: ../lib/theme-options.php:274
+msgid "Copyright information"
+msgstr ""
+
+#: ../lib/theme-options.php:298
+msgid ""
+"Display RSS Feed icon (it will appear alongside with social profiles icons)"
+msgstr ""
+
+#: ../lib/theme-options.php:306
+msgid "Your Twitter profile link"
+msgstr ""
+
+#: ../lib/theme-options.php:318
+msgid "Your Facebook profile link"
+msgstr ""
+
+#: ../lib/theme-options.php:330
+msgid "Your LinkedIn profile link"
+msgstr ""
+
+#: ../lib/theme-options.php:342
+msgid "Your Google + profile link"
+msgstr ""
+
+#: ../lib/theme-options.php:354
+msgid "Your Pinterest profile link"
+msgstr ""
+
+#: ../lib/theme-options.php:365
+msgid "General background"
+msgstr ""
+
+#: ../lib/theme-options.php:378
+msgid "Upload new tillable image (it will override the selection above)."
+msgstr ""
+
+#: ../lib/theme-options.php:390
+msgid "For example: <i>h1, h2, h3 { color:blue; }</i>"
+msgstr ""
