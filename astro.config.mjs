@@ -15,6 +15,9 @@ export default defineConfig({
       components: {
         page: "storyblok/Page",
         hero: "storyblok/Hero",
+        about: "storyblok/About",
+        section: "storyblok/Section",
+        gallery: "storyblok/Gallery",
         // config: "storyblok/Config",
         // "popular-articles": "storyblok/PopularArticles",
         // "all-articles": "storyblok/AllArticles",
