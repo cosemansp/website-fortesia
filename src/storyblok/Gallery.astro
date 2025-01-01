@@ -1,0 +1,65 @@
+---
+import { storyblokEditable, renderRichText } from "@storyblok/astro";
+import slugify from "slugify";
+
+const { blok } = Astro.props;
+console.log("blok - gallery", blok);
+---
+
+<article {...storyblokEditable(blok)}>
+  <section
+    id={slugify(blok.Title || "gallery")}
+    class="slide section-active"
+    data-stellar-background-ratio="0.0"
+    style="background-position: 0px 0px;"
+  >
+    <div class="container">
+      <hgroup>
+        <h1>{blok.title}</h1>
+      </hgroup>
+      <div class="portfolio_container">
+        <div class="separator"></div>
+
+        <div class="portfolio_preview clearfix" style="display: none;">
+          <div class="contols_container clearfix">
+            <div class="controls" id="controls-0">
+              <a class="close"><i class="icon-remove"></i></a><div class="ss-controls">
+                <a href="#play" class="play" title=""><i class="icon-play"></i></a>
+              </div><div class="nav-controls">
+                <a class="prev" rel="history" title="" href="#9"><i class="icon-chevron-left"></i></a><a
+                  class="next"
+                  rel="history"
+                  title=""
+                  href="#2"><i class="icon-chevron-right"></i></a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="slideshow_container sixteen columns clearfix">
+            <div class="loading" id="loading-0" style=""></div>
+            <div id="slideshow-0" class="slideshow styled"></div>
+            <div class="caption eleven columns clearfix" id="caption-0"></div>
+          </div>
+        </div>
+
+        <div class="thumbs_container" id="thumbs" style="display: block;">
+          <ul class="thumbs clearfix">
+            {
+              blok.images.map((image) => (
+                <li class="one-third column selected">
+                  <a class="thumb styled colorbox-off" href={image.filename} title={image.name} rel="history">
+                    <img
+                      src={image.filename}
+                      class="attachment-portfolio-thumbnail colorbox-420 wp-post-image"
+                      alt={image.alt}
+                    />
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>

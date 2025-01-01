@@ -14,10 +14,7 @@ export default defineConfig({
       bridge: env.STORYBLOK_IS_PREVIEW === "yes",
       components: {
         page: "storyblok/Page",
-        // feature: "storyblok/Feature",
-        // grid: "storyblok/Grid",
-        teaser: "storyblok/Teaser",
-        // hero: "storyblok/Hero",
+        hero: "storyblok/Hero",
         // config: "storyblok/Config",
         // "popular-articles": "storyblok/PopularArticles",
         // "all-articles": "storyblok/AllArticles",

@@ -1,27 +1,48 @@
 ---
-import { storyblokEditable } from '@storyblok/astro'
+import { storyblokEditable } from "@storyblok/astro";
+import slugify from "slugify";
 
-const { blok } = Astro.props
-let dynamicHeroClass = blok.layout === 'constrained' ? 'container mx-auto' : ''
+const { blok } = Astro.props;
 ---
 
-<div
-  {...storyblokEditable(blok)}
-  class={`${dynamicHeroClass} min-h-[500px] relative flex items-end justify-center mb-6 rounded-[5px] overflow-hidden`}
+<section
+  id="home"
+  class="slide section-active"
+  data-stellar-background-ratio="0.0"
+  style="background-position: 0px 0px;"
 >
-  <div
-    class="relative z-10 w-full text-center bg-gradient-to-t from-black/70 via-black/50 to-transparent py-6"
-  >
-    <h1 class="text-6xl text-white font-bold mb-3">
-      {blok.headline}
-    </h1>
-    <h2 class="text-4xl text-white font-light">
-      {blok.subheadline}
-    </h2>
+  <div class="container">
+    <div {...storyblokEditable(blok)}>
+      <hgroup>
+        <h1>{blok.headline}</h1>
+      </hgroup>
+      <div class="twelve columns offset-by-two clearfix">
+        <strong>
+          <div class="flexslider clearfix styled">
+            <ul class="slides">
+              {
+                blok.carousel.map((image) => {
+                  return (
+                    <li>
+                      <img src={image.filename} />
+                    </li>
+                  );
+                })
+              }
+            </ul>
+          </div>
+        </strong>
+      </div>
+      <div class="sixteen columns">
+        <h2 style="text-align: center;">
+          <b><strong>{blok.subheadline}</strong></b>
+        </h2>
+        <h2 style="text-align: center;">
+          <blockquote>
+            {blok.quote}
+          </blockquote>
+        </h2>
+      </div>
+    </div>
   </div>
-  <img
-    src={blok.background_image.filename}
-    alt={blok.background_image.alt}
-    class="absolute top-0 left-0 z-0 w-full h-full object-cover"
-  />
-</div>
+</section>

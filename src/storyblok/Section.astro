@@ -1,0 +1,31 @@
+---
+import { storyblokEditable, renderRichText } from "@storyblok/astro";
+import markdownIt from "markdown-it";
+import slugify from "slugify";
+
+const { blok } = Astro.props;
+const md = markdownIt();
+const html = md.render(blok.text);
+
+// const renderedRichText = renderRichText(blok.content);
+console.log("blok - section", blok);
+---
+
+<article {...storyblokEditable(blok)}>
+  <section
+    id={slugify(blok.title || "section", { lower: true })}
+    class="slide section-active"
+    data-stellar-background-ratio="0.5"
+    style='background: url("/images/diamond_upholstery.png") 0px 693.824px repeat;'
+  >
+    <div class="container">
+      <hgroup>
+        <h1>{blok.title}</h1>
+        <h2 class=""><span> </span></h2>
+      </hgroup>
+      <!-- <div class="twelve columns"> -->
+      <div class="columns-1 md:columns-2" set:html={html} />
+      <!-- </div> -->
+    </div>
+  </section>
+</article>

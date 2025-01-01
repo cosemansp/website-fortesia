@@ -10,6 +10,8 @@ License:
 License URI:
 */
 
+@import url(http://fonts.googleapis.com/css?family=Oranienbaum);
+
 /*========================================
 	=RESET
 =========================================*/
@@ -1690,7 +1692,6 @@ article.search_results h2 > a {
   }
 }
 
-@import url(http://fonts.googleapis.com/css?family=Oranienbaum);
 h1,
 h2,
 h3,

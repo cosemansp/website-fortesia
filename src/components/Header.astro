@@ -1,13 +1,52 @@
+---
+import { useStoryblokApi, type ISbStoriesParams } from "@storyblok/astro";
+
+const storyblokApi = useStoryblokApi();
+const { data } = await storyblokApi.get("cdn/stories/config", {
+  version: "draft",
+});
+
+const story = data.story;
+console.log("menu", story.content.header_menu);
+---
+
 <header>
   <div class="container">
     <h1 class="five columns" id="logo">FOrteSia</h1>
 
     <nav class="eleven columns">
-      <!-- <a id="mobile_nav" title="Navigation">
-        <i class="icon-align-justify"></i>
-      </a> -->
       <ul id="menu-navigation" class="navigation">
-        <li id="menu-item-13" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13 active">
+        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13 active">
+          <a href="#home">Home</a>
+        </li>
+        {
+          story.content.header_menu.map((item) => {
+            if (!item.children) {
+              return (
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13 active">
+                  <a href={"#" + item.link.anchor}>{item.name}</a>
+                </li>
+              );
+            } else {
+              return (
+                <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                  <a href={"#" + item.link.anchor}>{item.name}</a>
+                  <ul class="sub-menu">
+                    {item.children.map((item) => (
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                        <a href={"#" + item.link.anchor}>{item.name}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              );
+            }
+          })
+        }
+        <!-- <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13 active">
+          <a href="#about">About</a>
+        </li> -->
+        <!-- <li id="menu-item-13" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13 active">
           <a href="#home">Home</a>
         </li>
         <li id="menu-item-188" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188">
@@ -43,7 +82,7 @@
               <a href="#praktisch-inschrijven">Inschrijven</a>
             </li>
           </ul>
-        </li>
+        </li> -->
       </ul>
     </nav>
   </div>
