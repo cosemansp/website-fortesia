@@ -220,6 +220,22 @@ section.slide {
   background-attachment: fixed !important;
 }
 
+/*------=quote-------------------*/
+
+section.quote,
+/* section.page {
+  min-height: 100%;
+} */
+
+section.quote > .container,
+section.page > .container {
+  padding: 50px 0;
+}
+
+section.quote {
+  background-attachment: fixed !important;
+}
+
 /*------=h-------------------*/
 
 h1,
@@ -588,6 +604,7 @@ blockquote {
   position: relative;
   padding: 0 3em 0 3em;
   margin: 0 0 1em 0;
+  font-size: 1.2em;
 }
 
 blockquote:before,

@@ -6,6 +6,7 @@ import Hero from "../storyblok/Hero.astro";
 import About from "../storyblok/About.astro";
 import Section from "../storyblok/Section.astro";
 import Gallery from "../storyblok/Gallery.astro";
+import Quote from "../storyblok/Quote.astro";
 import isPreview from "../utils/isPreview";
 
 const storyblokApi = useStoryblokApi();
@@ -40,6 +41,9 @@ const story = data.story;
       }
       if (section.component === "gallery") {
         return <Gallery blok={section} />;
+      }
+      if (section.component === "quote") {
+        return <Quote blok={section} />;
       }
     })
   }

@@ -1,0 +1,28 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+
+const { blok } = Astro.props;
+---
+
+<section
+  id="home"
+  class="quote section-active"
+  data-stellar-background-ratio="0.0"
+  style='background: url("/images/grey.png") 0px 693.824px repeat;'
+>
+  <div class="container">
+    <div {...storyblokEditable(blok)}>
+      <div class="sixteen columns">
+        <h2 style="text-align: center;">
+          <b><strong>{blok.title}</strong></b>
+        </h2>
+        <h2 style="text-align: center;">
+          <blockquote>
+            {blok.quote}
+            {blok.author && <footer class="text-xl text-amber-700 text-right">— {blok.author}</footer>}
+          </blockquote>
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
