@@ -3,10 +3,10 @@ import { useStoryblokApi, type ISbStoriesParams } from "@storyblok/astro";
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import Hero from "../storyblok/Hero.astro";
-import About from "../storyblok/About.astro";
 import Section from "../storyblok/Section.astro";
 import Gallery from "../storyblok/Gallery.astro";
 import Quote from "../storyblok/Quote.astro";
+import Contact from "../storyblok/Contact.astro";
 import isPreview from "../utils/isPreview";
 
 const storyblokApi = useStoryblokApi();
@@ -33,9 +33,6 @@ const story = data.story;
       if (section.component === "hero") {
         return <Hero blok={section} />;
       }
-      if (section.component === "about") {
-        return <About blok={section} />;
-      }
       if (section.component === "section") {
         return <Section blok={section} />;
       }
@@ -44,6 +41,9 @@ const story = data.story;
       }
       if (section.component === "quote") {
         return <Quote blok={section} />;
+      }
+      if (section.component === "contact") {
+        return <Contact blok={section} />;
       }
     })
   }

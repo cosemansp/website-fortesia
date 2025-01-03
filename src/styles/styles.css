@@ -835,6 +835,7 @@ ul.flex-direction-nav {
   display: block;
   margin: 0;
   float: left;
+  width: 100%;
 }
 
 /*========================================
@@ -890,6 +891,10 @@ ul.thumbs li .caption {
 .slideshow_container {
   position: relative;
   margin-bottom: 30px !important;
+}
+
+#slideshow-0 img {
+  width: 100%;
 }
 
 .slideshow {

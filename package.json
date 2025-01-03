@@ -25,6 +25,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "markdown-it": "^14.1.0",
     "slugify": "^1.6.6",
-    "smartypants": "^0.2.2"
+    "smartypants": "^0.2.2",
+    "vercel-email": "^0.0.6"
   }
 }

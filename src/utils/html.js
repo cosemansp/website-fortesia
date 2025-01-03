@@ -3,7 +3,7 @@ export function splitHtmlStringPerPTag(htmlString) {
   let result;
   let paragraphTexts = [];
 
-  while ((result = regex.exec(htmlString)) !== null) {
+  while ((result = regex.exec(htmlString.replaceAll("\n", ""))) !== null) {
     paragraphTexts.push("<p>" + result[1] + "</p>");
   }
   return paragraphTexts;

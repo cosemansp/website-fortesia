@@ -11,7 +11,7 @@ const { blok } = Astro.props;
     id={slugify(blok.Title || "gallery")}
     class="slide section-active"
     data-stellar-background-ratio="0.0"
-    style="background-position: 0px 0px;"
+    style={`background: url("${blok.background.filename}") 0px 693.824px repeat;`}
   >
     <div class="container">
       <hgroup>

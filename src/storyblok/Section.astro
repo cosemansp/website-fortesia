@@ -13,11 +13,9 @@ const paragraphs = splitHtmlStringPerPTag(html);
 const itCanOverflow = paragraphs.length > amountOfParagraphs;
 const beginText = itCanOverflow ? paragraphs.slice(0, amountOfParagraphs - 1).join(" ") : html;
 const endText = paragraphs.slice(amountOfParagraphs - 1).join(" ");
-
-// console.log("blok - section", { beginText, endText });
-
-// const renderedRichText = renderRichText(blok.content);
-console.log("blok - section", {blok, amountOfParagraphs});
+const sessionId = blok._uid;
+const bg = blok.background.filename || '';
+const darkTextClass = (bg.includes('gray_sand') || bg.includes('dark')) ? 'text-white text-shadow-none' : ''
 ---
 
 <article {...storyblokEditable(blok)}>
@@ -25,40 +23,75 @@ console.log("blok - section", {blok, amountOfParagraphs});
     id={slugify(blok.title || "section", { lower: true })}
     class="slide section-active"
     data-stellar-background-ratio="0.5"
-    style={`background: url("${blok.background}") 0px 693.824px repeat;`}
+    style={`background: url("${bg}") 0px 693.824px repeat;`}
   >
     <div class="container">
       <hgroup>
-        <h1>{blok.title}</h1>
+        <h1 class={darkTextClass}>{blok.title}</h1>
       </hgroup>
       <div class="separator"></div>
-      
-      <div class="columns-1 md:columns-2">
-        <span set:html={beginText} />
-        <span class="hidden" id="more-text" set:html={endText} />
-      </div>
+      {blok.imageLeft?.filename && (
+        <figure class="eight columns">
+          <div class="styled">
+            <img
+              width="432"
+              height="427"
+              src={blok.imageLeft.filename}
+              class="attachment-author-thumbnail colorbox-51 wp-post-image"
+              alt=""
+            />
+          </div>
+        </figure>
+        <div class="eight columns">
+          <span class={darkTextClass} set:html={html} />
+        </div> 
+      )}
+      {blok.imageRight?.filename && (
+         <div class="eight columns">
+          <span class={darkTextClass} set:html={html} />
+        </div> 
+        <figure class="eight columns">
+          <div class="styled">
+            <img
+              width="432"
+              height="427"
+              src={blok.imageRight.filename}
+              class="attachment-author-thumbnail colorbox-51 wp-post-image"
+              alt=""
+            />
+          </div>
+        </figure>
+      )}
+      {!blok.imageLeft?.filename && !blok.imageRight?.filename && (
+        <div class="columns-1 md:columns-2">
+          <span set:html={beginText} />
+          <span class="hidden" id={`more-text-${sessionId}`} set:html={endText} />
+        </div>
+      )}
       {itCanOverflow && (
-        <span id="toggle-btn" class="underline cursor-pointer">meer...</span>
-        <span id="hide-btn" class="hidden underline cursor-pointer">minder</span>
+        <span id={`toggle-btn-${sessionId}`} class="underline cursor-pointer">meer...</span>
+        // <span id={`hide-btn-${sessionId}`} class="hidden underline cursor-pointer">minder</span>
       )}
     </div>
   </section>
 </article>
 
-<script>
-  const moreTextEl = document.getElementById("more-text");
-  const toggleBtnEl = document.getElementById("toggle-btn");
-  const hideBtnEl = document.getElementById("hide-btn");
+<script is:inline define:vars={{sessionId, itCanOverflow}}>
+  if (!itCanOverflow) return;
+
+  const moreTextEl = document.getElementById(`more-text-${sessionId}`);
+  const toggleBtnEl = document.getElementById(`toggle-btn-${sessionId}`);
+  // const hideBtnEl = document.getElementById(`hide-btn-${sessionId}`);
 
   toggleBtnEl.addEventListener("click", () => {
     moreTextEl.classList.toggle("hidden");
     toggleBtnEl.classList.toggle("hidden");
-    hideBtnEl.classList.toggle("hidden");
+    // hideBtnEl.classList.toggle("hidden");
   });
 
-  hideBtnEl.addEventListener("click", () => {
-    moreTextEl.classList.toggle("hidden");
-    toggleBtnEl.classList.toggle("hidden");
-    hideBtnEl.classList.toggle("hidden");
-  });
+  // hideBtnEl.addEventListener("click", () => {
+  //   moreTextEl.classList.toggle("hidden");
+  //   toggleBtnEl.classList.toggle("hidden");
+  //   hideBtnEl.classList.toggle("hidden");
+  // });
 </script>

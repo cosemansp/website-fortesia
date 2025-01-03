@@ -16,23 +16,23 @@ const { blok } = Astro.props;
       <hgroup>
         <h1>{blok.headline}</h1>
       </hgroup>
-      <div class="twelve columns offset-by-two clearfix">
-        <strong>
-          <div class="flexslider clearfix styled">
-            <ul class="slides">
-              {
-                blok.carousel.map((image) => {
-                  return (
-                    <li>
-                      <img src={image.filename} />
-                    </li>
-                  );
-                })
-              }
-            </ul>
-          </div>
-        </strong>
-      </div>
+      <!-- <div class="twelve columns offset-by-two clearfix"> -->
+      <strong>
+        <div class="flexslider clearfix styled">
+          <ul class="slides">
+            {
+              blok.carousel.map((image) => {
+                return (
+                  <li>
+                    <img src={image.filename} />
+                  </li>
+                );
+              })
+            }
+          </ul>
+        </div>
+      </strong>
+      <!-- </div> -->
       <div class="sixteen columns">
         <h2 style="text-align: center;">
           <b><strong>{blok.subheadline}</strong></b>
