@@ -18,6 +18,7 @@ export default defineConfig({
         section: "storyblok/Section",
         gallery: "storyblok/Gallery",
         quote: "storyblok/Quote",
+        contact: "storyblok/Contact",
         // config: "storyblok/Config",
         // "popular-articles": "storyblok/PopularArticles",
         // "all-articles": "storyblok/AllArticles",
