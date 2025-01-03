@@ -2,17 +2,15 @@
 import { storyblokEditable, renderRichText } from "@storyblok/astro";
 import markdownIt from "markdown-it";
 import slugify from "slugify";
-import { splitHtmlStringPerPTag } from "../utils/html";
 
 const { blok } = Astro.props;
 const md = markdownIt();
 const html = md.render(blok.text);
 
-const amountOfParagraphs = Number(blok.amountOfParagraphs ?? 100);
-const paragraphs = splitHtmlStringPerPTag(html);
-const itCanOverflow = paragraphs.length > amountOfParagraphs;
-const beginText = itCanOverflow ? paragraphs.slice(0, amountOfParagraphs - 1).join(" ") : html;
-const endText = paragraphs.slice(amountOfParagraphs - 1).join(" ");
+const beginHtml = md.render(blok.text);
+const endHtml = md.render(blok.textMore || '');
+const itCanOverflow = blok.textMore?.length > 0;
+
 const sessionId = blok._uid;
 const bg = blok.background.filename || '';
 const darkTextClass = (bg.includes('gray_sand') || bg.includes('dark')) ? 'text-white text-shadow-none' : ''
@@ -64,8 +62,8 @@ const darkTextClass = (bg.includes('gray_sand') || bg.includes('dark')) ? 'text-
       )}
       {!blok.imageLeft?.filename && !blok.imageRight?.filename && (
         <div class="columns-1 md:columns-2">
-          <span set:html={beginText} />
-          <span class="hidden" id={`more-text-${sessionId}`} set:html={endText} />
+          <span set:html={beginHtml} />
+          <span class="hidden" id={`more-text-${sessionId}`} set:html={endHtml} />
         </div>
       )}
       {itCanOverflow && (
