@@ -1736,3 +1736,12 @@ h2,
 h3 {
   color: darkred;
 }
+
+a {
+  text-decoration: underline;
+}
+
+li {
+  margin-left: 1rem;
+  list-style-type: circle;
+}
