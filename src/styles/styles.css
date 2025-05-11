@@ -604,12 +604,12 @@ blockquote {
   position: relative;
   padding: 0 3em 0 3em;
   margin: 0 0 1em 0;
-  font-size: 1.2em;
+  font-size: 2em;
 }
 
 blockquote:before,
 blockquote:after {
-  font-size: 5em;
+  font-size: 3em;
   color: #ccc;
   opacity: 0.5;
   position: absolute;
@@ -1166,6 +1166,10 @@ div.tooltip:after {
 /*========================================
 	=BLOG
 =========================================*/
+
+article {
+  font-size: 1.2em;
+}
 
 article.post {
   margin-bottom: 120px;
@@ -1752,16 +1756,20 @@ li {
 }
 
 .sub-page article .title h1 {
-  margin-bottom: 0.4em;
   font-size: 3em;
-  margin-bottom: 0.5em;
+  margin-bottom: -40px;
 }
 
 
 .sub-page article .container {
-  padding: 11px 0 0 0
+  padding: 100px 0 0 0
 }
 
 .sub-page article .container h1 {
   font-size: 2em;
-} 
+}
+
+.sub-page blockquote {
+  padding: 0 1em 0 1em;
+  font-size: 1.5em;
+}

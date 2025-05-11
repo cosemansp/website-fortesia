@@ -22,8 +22,8 @@ const story = data.story;
           story.content.header_menu.map((item) => {
             let url = item.link.cached_url || '/';
             if (!item.children || item.children?.length === 0) {
-              if (item.link.anchor) {
-                url += "#" + item.link.anchor;
+              if (item.anchor) {
+                url += "#" + item.anchor;
               }
               return (
                 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13">

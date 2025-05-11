@@ -2,8 +2,12 @@
 import { useStoryblokApi, type ISbStoriesParams } from "@storyblok/astro";
 // @ts-ignore
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
-import MainLayout from "../layouts/MainLayout.astro";
 import isPreview from "../utils/isPreview";
+import MainLayout from "../layouts/MainLayout.astro";
+import Section from "../storyblok/Section.astro";
+import Gallery from "../storyblok/Gallery.astro";
+import Quote from "../storyblok/Quote.astro";
+import Title from "../storyblok/Title.astro";
 
 export async function getStaticPaths() {
   const storyblokApi = useStoryblokApi();
@@ -28,13 +32,28 @@ try {
   const { data } = await storyblokApi.get(url, options);
   story = data.story;
 } catch (e) {
-  console.log("error !!!!!", e);
-  throw new Error(e);
+  return Astro.redirect('/');
 }
 ---
 
 <MainLayout>
   <div class="sub-page">
-    <StoryblokComponent blok={story.content} />
+    {
+      story.content.body?.map((section) => {
+        console.log("section", section);
+        if (section.component.toLowerCase() === "title") {
+          return <Title blok={section} />;
+        }
+        if (section.component === "section") {
+          return <Section blok={section} />;
+        }
+        if (section.component === "gallery") {
+          return <Gallery blok={section} />;
+        }
+        if (section.component === "quote") {
+          return <Quote blok={section} />;
+        }
+      })
+    }
   </div>
 </MainLayout>

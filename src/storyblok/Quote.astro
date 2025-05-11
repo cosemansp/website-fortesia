@@ -2,6 +2,8 @@
 import { storyblokEditable } from "@storyblok/astro";
 
 const { blok } = Astro.props;
+const bg = blok.background?.filename || '';
+const darkTextClass = (bg.includes('gray_sand') || bg.includes('dark')) ? 'text-white text-shadow-none' : ''
 ---
 
 <section
@@ -17,9 +19,9 @@ const { blok } = Astro.props;
           <b><strong>{blok.title}</strong></b>
         </h2>
         <h2 style="text-align: center;">
-          <blockquote>
+          <blockquote class={darkTextClass}>
             {blok.quote}
-            {blok.author && <footer class="text-xl text-amber-700 text-right">— {blok.author}</footer>}
+            {blok.author && <footer class="text-xl text-right">{blok.author}</footer>}
           </blockquote>
         </h2>
       </div>
