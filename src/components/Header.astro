@@ -20,7 +20,7 @@ const story = data.story;
         </li>
         {
           story.content.header_menu.map((item) => {
-            let url = item.link.cached_url || '/';
+            let url = "/" + (item.link.cached_url || '');
             if (!item.children || item.children?.length === 0) {
               if (item.anchor) {
                 url += "#" + item.anchor;
