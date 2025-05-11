@@ -4,47 +4,37 @@ import { useStoryblokApi, type ISbStoriesParams } from "@storyblok/astro";
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import isPreview from "../utils/isPreview";
+
 export async function getStaticPaths() {
   const storyblokApi = useStoryblokApi();
-  const { data } = await storyblokApi.get("cdn/links", {
-    version: isPreview() ? "draft" : "published",
-  });
-  let links = data.links;
-  links = Object.values(links);
-  const paths = links
-    .filter((link) => !link.is_folder)
-    .map((link: any) => {
-      return {
-        params: {
-          slug: link.slug === "home" || link.slug === "config" ? undefined : link.slug,
-        },
-      };
-    });
+  const { data } = await storyblokApi.get('cdn/links/');
+  const links = Object.values(data.links)
+  const paths = links.filter((link: any) => link.slug !== 'home' && link.slug !== 'config')
+    .map((link: any) => ({ params: { slug: link.slug } }));
   return paths;
 }
 
 const { slug } = Astro.params;
-// console.log("slug", Astro.params, isPreview());
+// console.log("slug", Astro.params, Astro.props);
 let props = Astro.props;
 const storyblokApi = useStoryblokApi();
-let story: any = null;
+let story: any = {};
 const url = `cdn/stories/${slug === undefined ? "home" : slug}`;
 const options = {
   version: isPreview() ? "draft" : "published",
   resolve_relations: ["popular-articles.articles"],
 } as ISbStoriesParams;
-// console.log("slug options", url, options);
 try {
   const { data } = await storyblokApi.get(url, options);
   story = data.story;
-  // console.log("slug result", data);
 } catch (e) {
   console.log("error !!!!!", e);
   throw new Error(e);
 }
-// const story = data.story;
 ---
 
 <MainLayout>
-  <StoryblokComponent blok={story.content} />
+  <div class="sub-page">
+    <StoryblokComponent blok={story.content} />
+  </div>
 </MainLayout>

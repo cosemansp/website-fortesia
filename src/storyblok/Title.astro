@@ -1,0 +1,17 @@
+---
+import { storyblokEditable, renderRichText } from "@storyblok/astro";
+import markdownIt from "markdown-it";
+import slugify from "slugify";
+
+const { blok } = Astro.props;
+const bg = blok.background?.filename || '';
+console.log("blok", blok);
+const darkTextClass = (bg.includes('gray_sand') || bg.includes('dark')) ? 'text-white text-shadow-none' : ''
+---
+
+<article {...storyblokEditable(blok)}>
+  <div class="title">
+    <h1 class={darkTextClass}>{blok.title}</h1>
+  </div>
+</article>
+

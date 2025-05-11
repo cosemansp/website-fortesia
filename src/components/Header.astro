@@ -7,7 +7,6 @@ const { data } = await storyblokApi.get("cdn/stories/config", {
 });
 
 const story = data.story;
-console.log("menu", story.content.header_menu);
 ---
 
 <header>
@@ -17,72 +16,44 @@ console.log("menu", story.content.header_menu);
     <nav class="eleven columns">
       <ul id="menu-navigation" class="navigation">
         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13 active">
-          <a href="#home">Home</a>
+          <a href="/#home">Home</a>
         </li>
         {
           story.content.header_menu.map((item) => {
+            let url = item.link.cached_url || '/';
             if (!item.children || item.children?.length === 0) {
+              if (item.link.anchor) {
+                url += "#" + item.link.anchor;
+              }
               return (
                 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13">
-                  <a href={"#" + item.link.anchor}>{item.name}</a>
+                  <a href={url}>{item.name}</a>
                 </li>
               );
             } else {
+              // console.log("item>>>>>>>>", {url, item});
+              // if (item.link.anchor) {
+              //   url += "#" + item.link.anchor;
+              // }
               return (
                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                  <a href={"#" + item.link.anchor}>{item.name}</a>
+                  <a href={url}>{item.name}</a>
                   <ul class="sub-menu">
-                    {item.children.map((item) => (
-                      <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                        <a href={"#" + item.link.anchor}>{item.name}</a>
-                      </li>
-                    ))}
+                    {item.children.map((item) => {
+                      // console.log("item?????", item);
+                      const innerUrl = url + "#" + item.anchor;
+                      return (
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                          <a href={innerUrl}>{item.name}</a>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </li>
               );
             }
           })
         }
-        <!-- <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13 active">
-          <a href="#about">About</a>
-        </li> -->
-        <!-- <li id="menu-item-13" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13 active">
-          <a href="#home">Home</a>
-        </li>
-        <li id="menu-item-188" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188">
-          <a href="#visie-inspiratie">Visie</a>
-        </li>
-        <li id="menu-item-250" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-250">
-          <a href="#about">Katrien</a>
-        </li>
-        <li id="menu-item-254" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-254">
-          <a href="#volwassenen">Atelier</a>
-          <ul class="sub-menu">
-            <li id="menu-item-189" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-189">
-              <a href="#volwassenen">Volwassenen</a>
-            </li>
-            <li id="menu-item-179" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-179">
-              <a href="#workshop">Workshop</a>
-            </li>
-            <li id="menu-item-255" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-255">
-              <a href="#atelier-kennismaking">Kennismaking</a>
-            </li>
-            <li id="menu-item-468" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-468">
-              <a href="#reacties">Reacties van cursisten</a>
-            </li>
-          </ul>
-        </li>
-        <li id="menu-item-175" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-175">
-          <a href="#praktisch-bereikbaarheid">Contact</a>
-          <ul class="sub-menu">
-            <li id="menu-item-253" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-253">
-              <a href="#contact-3">Stuur een bericht</a>
-            </li>
-            <li id="menu-item-252" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-252">
-              <a href="#praktisch-inschrijven">Inschrijven</a>
-            </li>
-          </ul>
-        </li> -->
       </ul>
     </nav>
   </div>

@@ -1745,3 +1745,23 @@ li {
   margin-left: 1rem;
   list-style-type: circle;
 }
+
+.sub-page {
+  padding: 100px 0 0 0;
+  padding-bottom: 150px;
+}
+
+.sub-page article .title h1 {
+  margin-bottom: 0.4em;
+  font-size: 3em;
+  margin-bottom: 0.5em;
+}
+
+
+.sub-page article .container {
+  padding: 11px 0 0 0
+}
+
+.sub-page article .container h1 {
+  font-size: 2em;
+} 

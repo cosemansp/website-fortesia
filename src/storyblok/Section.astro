@@ -12,7 +12,7 @@ const endHtml = md.render(blok.textMore || '');
 const itCanOverflow = blok.textMore?.length > 0;
 
 const sessionId = blok._uid;
-const bg = blok.background.filename || '';
+const bg = blok.background?.filename || '';
 const darkTextClass = (bg.includes('gray_sand') || bg.includes('dark')) ? 'text-white text-shadow-none' : ''
 ---
 
